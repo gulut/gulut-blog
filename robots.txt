@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://gulut.github.io/gulut-blog/sitemap.xml
