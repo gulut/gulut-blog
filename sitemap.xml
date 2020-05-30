@@ -16,6 +16,13 @@
   </url>
   
   <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/hugo/</loc>
+    <lastmod>2020-05-30T20:19:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gulut.github.io/gulut-blog/categories/personal-notes/</loc>
     <lastmod>2020-05-30T20:19:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,6 +31,13 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/post/</loc>
+    <lastmod>2020-05-30T20:19:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
     <lastmod>2020-05-30T20:19:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -39,12 +53,6 @@
   <url>
     <loc>https://gulut.github.io/gulut-blog/2020/05/30/2020-05-30-talk-about-hugo-and-github-pages/</loc>
     <lastmod>2020-05-30T19:09:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
