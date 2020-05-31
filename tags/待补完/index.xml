@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>待补完 on Gulut&#39;s Blog</title>
+    <link>https://gulut.github.io/gulut-blog/tags/%E5%BE%85%E8%A1%A5%E5%AE%8C/</link>
+    <description>Recent content in 待补完 on Gulut&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 31 May 2020 15:32:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://gulut.github.io/gulut-blog/tags/%E5%BE%85%E8%A1%A5%E5%AE%8C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>利用域前置技术绕过GFW</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/05/31/2020-05-31-by-pass-the-gfw-by-sni/</link>
+      <pubDate>Sun, 31 May 2020 15:32:22 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/05/31/2020-05-31-by-pass-the-gfw-by-sni/</guid>
+      <description>前言 先写个大概，后续再补充完 原理 HTTPS（更准确来讲是TLS）有一个扩展，使得在Client Hello阶段，浏览器会向服务器明文发送要访问</description>
+    </item>
+    
+  </channel>
+</rss>
