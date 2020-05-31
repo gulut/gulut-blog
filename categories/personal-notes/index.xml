@@ -17,7 +17,7 @@
       <pubDate>Sun, 31 May 2020 15:32:22 +0800</pubDate>
       
       <guid>https://gulut.github.io/gulut-blog/post1/2020/05/31/2020-05-31-by-pass-the-gfw-by-sni/</guid>
-      <description>前言 先写个大概，后续再补充完 原理 HTTPS（更准确来讲是TLS）有一个扩展，使得在Client Hello阶段，浏览器会向服务器明文发送要访问</description>
+      <description>前言 在一些特殊的时期，你的科学上Internet服务不好用时，但又要下一些github上的东西或想上Pixiv时，这篇文章或许对你有所帮助。</description>
     </item>
     
     <item>
