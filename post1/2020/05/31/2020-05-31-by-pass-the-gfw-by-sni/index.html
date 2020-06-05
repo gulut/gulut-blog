@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="前言 在一些特殊的时期，你的科学上Internet服务不好用时，但又要下一些github上的东西或想上Pixiv时，这篇文章或许对你有所帮助。" /><meta name="keywords" content="科学上网, SNI, 域前置" />
+<meta name="author" content="Gulut" /><meta name="description" content="前言 在一些特殊的时期，你的科学上Internet服务不好用时，但又要下一些github上的东西或想上Pixiv时，这篇文章或许对你有所帮助。" /><meta name="keywords" content="科学上网, SNI, 域前置, Domain Fronting" />
 
 
 
@@ -48,7 +48,7 @@
 <meta itemprop="description" content="前言 在一些特殊的时期，你的科学上Internet服务不好用时，但又要下一些github上的东西或想上Pixiv时，这篇文章或许对你有所帮助。">
 <meta itemprop="datePublished" content="2020-05-31T15:32:22&#43;08:00" />
 <meta itemprop="dateModified" content="2020-05-31T15:32:22&#43;08:00" />
-<meta itemprop="wordCount" content="1643">
+<meta itemprop="wordCount" content="1659">
 
 
 
@@ -148,7 +148,7 @@
 <p>在一些特殊的时期，你的科学上Internet服务不好用时，但又要下一些github上的东西或想上Pixiv时，这篇文章或许对你有所帮助。</p>
 <h2 id="原理">原理</h2>
 <p>HTTPS（更准确来讲是TLS）有一个扩展，使得在Client Hello阶段，浏览器会向服务器明文发送要访问网站的域名。而GFW根据这一原理对特定的SNI进行阻断，这就是俗称的SNI阻断。更多的可以去看：<a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%E7%A7%B0%E6%8C%87%E7%A4%BA">维基百科</a></p>
-<p>而域前置技术，就是利用有的服务器不验证SNI的这一特点，给GFW和服务器一个假的SNI。因为GFW没有私钥，只能通过SNI和IP判断你要访问的网站，而假的SNI就能欺骗GFW。但服务器本身有私钥，解开后，服务器是通过HTTP请求头判断你要访问哪个网站的。（但注意，特殊的比如虚拟主机、Cloudflare免费版等能在一个IP上部署多个证书的，是一定要SNI的，否则会出错。这种唯一的绕过办法就是ESNI，如果有空的话，以后再讲）因此可以通过这种方式绕过GFW的SNI阻断。</p>
+<p>而域前置(Domain Fronting)技术，就是利用有的服务器不验证SNI的这一特点，给GFW和服务器一个假的SNI。因为GFW没有私钥，只能通过SNI和IP判断你要访问的网站，而假的SNI就能欺骗GFW。但服务器本身有私钥，解开后，服务器是通过HTTP请求头判断你要访问哪个网站的。（但注意，特殊的比如虚拟主机、Cloudflare免费版等能在一个IP上部署多个证书的，是一定要SNI的，否则会出错。这种唯一的绕过办法就是ESNI，如果有空的话，以后再讲）因此可以通过这种方式绕过GFW的SNI阻断。</p>
 <h2 id="一些已经完整实现的开源项目">一些已经完整实现的开源项目</h2>
 <p><a href="https://github.com/bypass-GFW-SNI/main">bypass-GFW-SNI/main</a>和他的Socks5版本<a href="https://github.com/bypass-GFW-SNI/proxy">bypass-GFW-SNI/proxy</a></p>
 <p><a href="https://github.com/SeaHOH/GotoX">SeaHOH/GotoX</a></p>
@@ -236,7 +236,11 @@ Google系|IP黑洞
           <a href="/gulut-blog/tags/internet/">Internet</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/gulut-blog/post1/2020/06/05/2020-06-05-manage-cert-by-xca/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">通过XCA管理CA及证书</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/gulut-blog/post1/2020/05/31/2020-05-31-useful-command-in-hugo-and-git/">
             <span class="next-text nav-default">Hugo与Git的常用命令</span>
             <span class="next-text nav-mobile">下一篇</span>
