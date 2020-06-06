@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&lt;a rel=&#39;Legal Information&#39; href=&#39;https://gulut.github.io/gulut-blog/gulut-blog/legal_information/&#39;&gt;Legal Information&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 06 Jun 2020 13:24:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 19:29:04 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>关于看不见本站图片以及Sogou图床防盗链解决方法</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/</link>
+      <pubDate>Sat, 06 Jun 2020 19:29:04 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/</guid>
+      <description>Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref</description>
+    </item>
     
     <item>
       <title>Python pyotp调用实战</title>

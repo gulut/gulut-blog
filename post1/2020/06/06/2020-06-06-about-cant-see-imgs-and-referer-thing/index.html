@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Python pyotp调用实战 - Gulut&#39;s Blog</title>
+  <title>关于看不见本站图片以及Sogou图床防盗链解决方法 - Gulut&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="调用原因（起因） 为了给一个Python程序加一个双因素认证功能，提高安全性，后来我就想如何在不使用短信（没钱）和邮件发送（容易进垃圾邮件）的" /><meta name="keywords" content="pyotp, python" />
+<meta name="author" content="Gulut" /><meta name="description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref" /><meta name="keywords" content="防盗链, Referer Control" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-python-pyotp-lib-test/" />
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Python pyotp调用实战" />
-<meta property="og:description" content="调用原因（起因） 为了给一个Python程序加一个双因素认证功能，提高安全性，后来我就想如何在不使用短信（没钱）和邮件发送（容易进垃圾邮件）的" />
+<meta property="og:title" content="关于看不见本站图片以及Sogou图床防盗链解决方法" />
+<meta property="og:description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-python-pyotp-lib-test/" />
-<meta property="article:published_time" content="2020-06-06T13:24:47+08:00" />
-<meta property="article:modified_time" content="2020-06-06T13:24:47+08:00" />
-<meta itemprop="name" content="Python pyotp调用实战">
-<meta itemprop="description" content="调用原因（起因） 为了给一个Python程序加一个双因素认证功能，提高安全性，后来我就想如何在不使用短信（没钱）和邮件发送（容易进垃圾邮件）的">
-<meta itemprop="datePublished" content="2020-06-06T13:24:47&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-06T13:24:47&#43;08:00" />
-<meta itemprop="wordCount" content="372">
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/" />
+<meta property="article:published_time" content="2020-06-06T19:29:04+08:00" />
+<meta property="article:modified_time" content="2020-06-06T19:29:04+08:00" />
+<meta itemprop="name" content="关于看不见本站图片以及Sogou图床防盗链解决方法">
+<meta itemprop="description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref">
+<meta itemprop="datePublished" content="2020-06-06T19:29:04&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-06T19:29:04&#43;08:00" />
+<meta itemprop="wordCount" content="175">
 
 
 
-<meta itemprop="keywords" content="python," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python pyotp调用实战"/>
-<meta name="twitter:description" content="调用原因（起因） 为了给一个Python程序加一个双因素认证功能，提高安全性，后来我就想如何在不使用短信（没钱）和邮件发送（容易进垃圾邮件）的"/>
+<meta itemprop="keywords" content="sogou," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于看不见本站图片以及Sogou图床防盗链解决方法"/>
+<meta name="twitter:description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -117,7 +117,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Python pyotp调用实战</h1>
+      <h1 class="post-title">关于看不见本站图片以及Sogou图床防盗链解决方法</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-06-06 </span>
@@ -133,104 +133,35 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#调用原因起因">调用原因（起因）</a></li>
-    <li><a href="#example-code">Example Code</a></li>
-    <li><a href="#目前bug">目前bug</a></li>
-    <li><a href="#执行结果">执行结果</a></li>
-    <li><a href="#注意事项">注意事项</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#解决方法">解决方法</a>
+      <ul>
+        <li><a href="#图片测试">图片测试</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="调用原因起因">调用原因（起因）</h2>
-<p>为了给一个Python程序加一个双因素认证功能，提高安全性，后来我就想如何在不使用短信（没钱）和邮件发送（容易进垃圾邮件）的情况下去生成验证码，后面想想Google Authenticator不就符合我的要求吗？后面去Google一下，原来用的是TOTP标准。</p>
-<h2 id="example-code">Example Code</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">import sys, pyotp, datetime
-if sys.argv.count == 2 :
-    OTPSecret = sys.argv[1]
-    ShowSecret = 0
-else:
-    OTPSecret = pyotp.random_base32()
-    ShowSecret = 1
-
-TOTPObject = pyotp.TOTP(OTPSecret)
-
-if ShowSecret == 1 :
-    print(&#34;You are in test mode.&#34;)
-    print(&#34;The Test Secret is &#34; + OTPSecret)
-    print(&#34;Test Add Url: &#34; + pyotp.totp.TOTP(OTPSecret).provisioning_uri(issuer_name=&#39;Test App&#39;, name=&#39;test@example.com&#39;))
-
-PassStatus = False
-
-while PassStatus == False:
-    print(&#34;Now is &#34; + datetime.datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;))
-    UserInput = input(&#34;Give me a code. It&#39;s 6 digitals.&#34;)
-    PassStatus = TOTPObject.verify(UserInput)
-    if PassStatus == False:
-        print(&#34;It&#39;s wrong. Please try it again.&#34;)
-
-print(&#34;Passed.&#34;)
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="目前bug">目前bug</h2>
-<p>输入超过6位的话，程序会蹦，记得加位数验证。</p>
-<h2 id="执行结果">执行结果</h2>
+      <h2 id="example">Example</h2>
+<p>在前文介绍<a href="https://gulut.github.io/gulut-blog/post1/2020/06/05/2020-06-05-manage-cert-by-xca/">xca的文章</a>中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。</p>
+<h2 id="解决方法">解决方法</h2>
+<p>安装<a href="https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin/related?hl=zh-CN">Referer Control</a>（没有科学上网环境的，请关注评论区），复制教程链接</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">You are in test mode.
-The Test Secret is 5ADHPNSTNDFWMMYR
-Test Add Url: otpauth://totp/Test%20App:test%40example.com?secret=5ADHPNSTNDFWMMYR&amp;issuer=Test%20App
-Now is 2020-06-06 18:30:17
-Give me a code. It&#39;s 6 digitals.123456
-It&#39;s wrong. Please try it again.
-Now is 2020-06-06 18:30:21
-Give me a code. It&#39;s 6 digitals.535186
-Passed.
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">https://img01.sogoucdn.com/app/a/100520146/AE8F5D5EE453CC7DED1CE58E0565B61B
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="注意事项">注意事项</h2>
-<p>TOTP是每30秒更新一次的，要保证服务器时间与用户时间相差不能太大。</p>
+</div><p>到地址栏手动打开，按图中设置即可。</p>
+<p>图中网址为：https://*.sogoucdn.com/</p>
+<h3 id="图片测试">图片测试</h3>
+<p>如设置正常，您应当能看见下面的图片
+<img src="https://img01.sogoucdn.com/app/a/100520146/A9F9BF53C9B55CE7EC96C38AB76B09CA" alt="">
+<img src="https://img04.sogoucdn.com/app/a/100520146/F068F9F995B73E42EE1EA8F46EAA2554" alt=""></p>
 
     </div>
 
@@ -247,16 +178,12 @@ Passed.
   
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/gulut-blog/tags/python/">python</a>
+          <a href="/gulut-blog/tags/sogou/">sogou</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">关于看不见本站图片以及Sogou图床防盗链解决方法</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/gulut-blog/post1/2020/06/05/2020-06-05-manage-cert-by-xca/">
-            <span class="next-text nav-default">通过XCA管理CA及证书</span>
+        
+        <a class="next" href="/gulut-blog/post1/2020/06/06/2020-06-06-python-pyotp-lib-test/">
+            <span class="next-text nav-default">Python pyotp调用实战</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -269,8 +196,8 @@ Passed.
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-06-06 13:24:47 \u002b0800 CST',
-        title: 'Python pyotp调用实战',
+        id: '2020-06-06 19:29:04 \u002b0800 CST',
+        title: '关于看不见本站图片以及Sogou图床防盗链解决方法',
         clientID: '5cc11be58eb331dd9d56',
         clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
         repo: 'gulut-blog',
