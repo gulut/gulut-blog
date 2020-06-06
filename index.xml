@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&lt;a rel=&#39;Legal Information&#39; href=&#39;https://gulut.github.io/gulut-blog/gulut-blog/legal_information/&#39;&gt;Legal Information&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 05 Jun 2020 23:12:21 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 13:24:47 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python pyotp调用实战</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-python-pyotp-lib-test/</link>
+      <pubDate>Sat, 06 Jun 2020 13:24:47 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-python-pyotp-lib-test/</guid>
+      <description>调用原因（起因） 为了给一个Python程序加一个双因素认证功能，提高安全性，后来我就想如何在不使用短信（没钱）和邮件发送（容易进垃圾邮件）的</description>
+    </item>
     
     <item>
       <title>版权信息</title>
