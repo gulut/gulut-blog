@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Windows Time(w32tm)折腾笔记 - Gulut&#39;s Blog</title>
+  <title>为Firefox启用ESNI的方法 - Gulut&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="前言 Windows的ntp时间同步服务（w32tm）一直以来都不是很能让我满意，比如同步间隔默认是7天，时间差太多就不同步等，让我很是无语；" /><meta name="keywords" content="w32time, w32tm, windows" />
+<meta name="author" content="Gulut" /><meta name="description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare" /><meta name="keywords" content="ESNI, Firefox" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/07/2020-06-07-w32tm-study-note/" />
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/13/2020-06-13-talk-about-esni/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Windows Time(w32tm)折腾笔记" />
-<meta property="og:description" content="前言 Windows的ntp时间同步服务（w32tm）一直以来都不是很能让我满意，比如同步间隔默认是7天，时间差太多就不同步等，让我很是无语；" />
+<meta property="og:title" content="为Firefox启用ESNI的方法" />
+<meta property="og:description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/07/2020-06-07-w32tm-study-note/" />
-<meta property="article:published_time" content="2020-06-07T13:34:38+08:00" />
-<meta property="article:modified_time" content="2020-06-07T13:34:38+08:00" />
-<meta itemprop="name" content="Windows Time(w32tm)折腾笔记">
-<meta itemprop="description" content="前言 Windows的ntp时间同步服务（w32tm）一直以来都不是很能让我满意，比如同步间隔默认是7天，时间差太多就不同步等，让我很是无语；">
-<meta itemprop="datePublished" content="2020-06-07T13:34:38&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-07T13:34:38&#43;08:00" />
-<meta itemprop="wordCount" content="771">
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/13/2020-06-13-talk-about-esni/" />
+<meta property="article:published_time" content="2020-06-13T22:37:17+08:00" />
+<meta property="article:modified_time" content="2020-06-13T22:37:17+08:00" />
+<meta itemprop="name" content="为Firefox启用ESNI的方法">
+<meta itemprop="description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare">
+<meta itemprop="datePublished" content="2020-06-13T22:37:17&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-13T22:37:17&#43;08:00" />
+<meta itemprop="wordCount" content="1320">
 
 
 
-<meta itemprop="keywords" content="windows," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows Time(w32tm)折腾笔记"/>
-<meta name="twitter:description" content="前言 Windows的ntp时间同步服务（w32tm）一直以来都不是很能让我满意，比如同步间隔默认是7天，时间差太多就不同步等，让我很是无语；"/>
+<meta itemprop="keywords" content="Internet," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为Firefox启用ESNI的方法"/>
+<meta name="twitter:description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,10 +116,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Windows Time(w32tm)折腾笔记</h1>
+      <h1 class="post-title">为Firefox启用ESNI的方法</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-06-07 </span>
+        <span class="post-time"> 2020-06-13 </span>
         <div class="post-category">
             <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
             </div>
@@ -133,89 +133,36 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#设置参数">设置参数</a></li>
-    <li><a href="#ntp服务器">ntp服务器</a>
-      <ul>
-        <li><a href="#检测ntp服务器稳定性的命令">检测ntp服务器稳定性的命令</a></li>
-      </ul>
-    </li>
-    <li><a href="#参考资料">参考资料</a></li>
+    <li><a href="#为什么使用sni">为什么使用SNI</a></li>
+    <li><a href="#esni检测地址">ESNI检测地址</a></li>
+    <li><a href="#esni原理">ESNI原理</a></li>
+    <li><a href="#firefox-启用esni的方法">Firefox 启用ESNI的方法</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="前言">前言</h2>
-<p>Windows的ntp时间同步服务（w32tm）一直以来都不是很能让我满意，比如同步间隔默认是7天，时间差太多就不同步等，让我很是无语；就想着Windows有没有一个地方调整这些设置的，Google一查果然在注册表里。</p>
-<h2 id="设置参数">设置参数</h2>
-<table>
-<thead>
-<tr>
-<th>注册表位置</th>
-<th>默认值</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient内的SpecialPollInterval</td>
-<td>604800</td>
-<td>同步频率，单位为秒</td>
-</tr>
-<tr>
-<td>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters内的NtpServer</td>
-<td>-</td>
-<td>同步服务器地址，后面要跟一个&rdquo;,0x8&rdquo;</td>
-</tr>
-<tr>
-<td>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxPosPhaseCorrection和HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxNegPhaseCorrection</td>
-<td>-</td>
-<td>设置最大允许偏差（一个是向前，一个是向后）0xFFFFFFFF忽略时间差距</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ntp服务器">ntp服务器</h2>
-<p>这里推荐几个靠谱的ntp服务器</p>
-<table>
-<thead>
-<tr>
-<th>NTP服务器地址</th>
-<th>来源</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>asia.pool.ntp.org</td>
-<td><a href="https://www.ntppool.org/zone/asia">https://www.ntppool.org/zone/asia</a></td>
-<td>pool.ntp.org 的，公益ntp服务器，Android自带的时间服务就是用这个的</td>
-</tr>
-<tr>
-<td>time1.cloud.tencent.com</td>
-<td><a href="https://cloud.tencent.com/document/product/213/30392">https://cloud.tencent.com/document/product/213/30392</a></td>
-<td>腾讯云公网NTP服务器</td>
-</tr>
-<tr>
-<td>ntp.aliyun.com</td>
-<td><a href="https://help.aliyun.com/document_detail/92704.html">https://help.aliyun.com/document_detail/92704.html</a></td>
-<td>阿里云公网NTP服务器</td>
-</tr>
-<tr>
-<td>time.apple.com</td>
-<td>-</td>
-<td>Apple NTP Server</td>
-</tr>
-</tbody>
-</table>
-<p>p.s:不建议用time.windows.com
-<img src="https://new-service.biliapi.net/picture/chatres/nullYDRnqalCyi.png" alt="">发5个同步请求，有3个包丢了。。</p>
-<h3 id="检测ntp服务器稳定性的命令">检测ntp服务器稳定性的命令</h3>
-<p>w32tm /stripchart /dataonly /samples:5 /computer:time.windows.com</p>
-<p>time.windows.com可以替换为你想要的，5个可以增加个数。</p>
-<h2 id="参考资料">参考资料</h2>
-<p><a href="https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings">https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings</a></p>
-<p><a href="https://www.iteye.com/blog/23497465-qq-com-1340074">https://www.iteye.com/blog/23497465-qq-com-1340074</a></p>
-<p><a href="https://kb.vmware.com/s/article/1318?lang=zh_CN">https://kb.vmware.com/s/article/1318?lang=zh_CN</a></p>
+      <blockquote>
+<p>本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare Blog:<a href="https://blog.cloudflare.com/zh/esni-zh/">https://blog.cloudflare.com/zh/esni-zh/</a>与<a href="https://blog.cloudflare.com/zh/encrypted-sni-zh/">https://blog.cloudflare.com/zh/encrypted-sni-zh/</a>，Firefox启用ESNI参考<a href="https://tecrobe.github.io/blog/post/doh-and-esni/">https://tecrobe.github.io/blog/post/doh-and-esni/</a>，转载请同时带上作者名称。</p>
+</blockquote>
+<h2 id="前言">前言</h2>
+<p>虽然TLS已经发展到了1.3版本了，可是一个短板至今仍未完全补齐。服务器为了区分您要访问的不同域名，根据不同域名返回不同的证书，为此TLS引入了一个扩展：SNI（<a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%E7%A7%B0%E6%8C%87%E7%A4%BA">详情看这</a>）您的ISP（互联网服务提供商）、网络中的设备可能都会看到您所访问的网站的域名。而G|F|W中也使用了SNI阻断（根据SNI来屏蔽网站）这一技术。因此，ESNI就应运而生了。</p>
+<h2 id="为什么使用sni">为什么使用SNI</h2>
+<p>从根本上说，SNI的存在是为了允许您在一个IP地址上托管多个加密的网站。早期的浏览器没有包含SNI扩展。因此，当发出建立HTTPS连接的请求时，web服务器没有太多信息来继续进行，并且只能回收web服务器正在监听的每个IP地址的单个SSL证书。</p>
+<p>这个问题的一个解决方案是，创建具有多个主题备用名称(SANs)的证书。这些证书将加密多个域的流量，这些域都可以托管在同一个IP上。Cloudflare就是这样处理来自不支持SNI的旧浏览器的HTTPS流量的。然而，我们限制这一功能仅供我们的付费客户使用，这和SANs不是一个很好的解决方案的原因一样：它们是一种黑客攻击，管理起来很麻烦，如果包含了太多域，可能会降低性能。</p>
+<p>最具弹性的解决方案是SNI。我认为的一个合理的类比是，把它想象成一个邮政信封。信封里的东西是受保护的，邮差是看不到的。而信封外面是街道地址，邮差根据它来将信封送到正确的建筑位置。在互联网上，web服务器的IP地址就相当于街道地址。</p>
+<p>然而，如果你住在一个多单元的大楼里，仅仅通过一个街道地址是不足以把信封送到正确的收件人手中的。为了补充街道地址，你要写上一个公寓号码或收件人的名字。这相当于SNI。如果web服务器承载多个域，SNI可以确保将请求路由到正确的站点，以便返回正确的SSL证书，从而能够加密和解密任何内容。</p>
+<h2 id="esni检测地址">ESNI检测地址</h2>
+<p><a href="https://www.cloudflare.com/ssl/encrypted-sni/">https://www.cloudflare.com/ssl/encrypted-sni/</a></p>
+<p>可以看看你的浏览器是否支持ESNI</p>
+<h2 id="esni原理">ESNI原理</h2>
+<p>先从SNI讲起<img src="https://i.loli.net/2020/06/14/ahiLu6BYtfjGIJb.png" alt="2020-6-14 11-55-57.png"></p>
+<p>比如我访问GitHub时浏览器会在Client Hello时将当前要访问的网站的域名以明文方式放在TLS扩展中一起传输。</p>
+<p>而支持ESNI的这不会有这一部分。ESNI的原理就是加密SNI的密钥与DNS记录一同分发，有的人会想DNS不也是明文传输的吗？但事实上在现在DoH，DoT的普及，使得这已不是个问题。</p>
+<h2 id="firefox-启用esni的方法">Firefox 启用ESNI的方法</h2>
+<p>首选项 - 常规 - 网络设置；启用基于HTTPS的DNS</p>
+<p>地址栏输入about:config，搜索network.security.esni.enabled，将值设为True，完成。</p>
+<p>访问前文提到的检测ESNI的网址，选择Run the test，看到Encrypted SNI打钩即可。</p>
 
     </div>
 
@@ -226,22 +173,18 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-06-07</span>
+    <span class="item-content">2020-06-13</span>
   </p>
   
   
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/gulut-blog/tags/windows/">windows</a>
+          <a href="/gulut-blog/tags/internet/">Internet</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/gulut-blog/post1/2020/06/13/2020-06-13-talk-about-esni/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">为Firefox启用ESNI的方法</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/">
-            <span class="next-text nav-default">关于看不见本站图片以及Sogou图床防盗链解决方法</span>
+        
+        <a class="next" href="/gulut-blog/post1/2020/06/07/2020-06-07-w32tm-study-note/">
+            <span class="next-text nav-default">Windows Time(w32tm)折腾笔记</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -254,8 +197,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-06-07 13:34:38 \u002b0800 CST',
-        title: 'Windows Time(w32tm)折腾笔记',
+        id: '2020-06-13 22:37:17 \u002b0800 CST',
+        title: '为Firefox启用ESNI的方法',
         clientID: '5cc11be58eb331dd9d56',
         clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
         repo: 'gulut-blog',
