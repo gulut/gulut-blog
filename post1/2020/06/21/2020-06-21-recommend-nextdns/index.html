@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>为Firefox启用ESNI的方法 - Gulut&#39;s Blog</title>
+  <title>加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法 - Gulut&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare" /><meta name="keywords" content="ESNI, Firefox" />
+<meta name="author" content="Gulut" /><meta name="description" content="前言 在之前几篇中略微涉及到了DoH，可是有些DoH服务比如Cloudflare的在国内连接不是很稳定，而ADGuard的又不能调整要屏蔽的东" /><meta name="keywords" content="Firefox DoH, NextDNS, DNS Over HTTPS" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/13/2020-06-13-talk-about-esni/" />
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/21/2020-06-21-recommend-nextdns/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="为Firefox启用ESNI的方法" />
-<meta property="og:description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare" />
+<meta property="og:title" content="加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法" />
+<meta property="og:description" content="前言 在之前几篇中略微涉及到了DoH，可是有些DoH服务比如Cloudflare的在国内连接不是很稳定，而ADGuard的又不能调整要屏蔽的东" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/13/2020-06-13-talk-about-esni/" />
-<meta property="article:published_time" content="2020-06-13T22:37:17+08:00" />
-<meta property="article:modified_time" content="2020-06-13T22:37:17+08:00" />
-<meta itemprop="name" content="为Firefox启用ESNI的方法">
-<meta itemprop="description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare">
-<meta itemprop="datePublished" content="2020-06-13T22:37:17&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-13T22:37:17&#43;08:00" />
-<meta itemprop="wordCount" content="1320">
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/21/2020-06-21-recommend-nextdns/" />
+<meta property="article:published_time" content="2020-06-21T13:15:06+08:00" />
+<meta property="article:modified_time" content="2020-06-21T13:15:06+08:00" />
+<meta itemprop="name" content="加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法">
+<meta itemprop="description" content="前言 在之前几篇中略微涉及到了DoH，可是有些DoH服务比如Cloudflare的在国内连接不是很稳定，而ADGuard的又不能调整要屏蔽的东">
+<meta itemprop="datePublished" content="2020-06-21T13:15:06&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-21T13:15:06&#43;08:00" />
+<meta itemprop="wordCount" content="337">
 
 
 
 <meta itemprop="keywords" content="Internet," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="为Firefox启用ESNI的方法"/>
-<meta name="twitter:description" content="本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare"/>
+<meta name="twitter:title" content="加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法"/>
+<meta name="twitter:description" content="前言 在之前几篇中略微涉及到了DoH，可是有些DoH服务比如Cloudflare的在国内连接不是很稳定，而ADGuard的又不能调整要屏蔽的东"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,10 +116,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">为Firefox启用ESNI的方法</h1>
+      <h1 class="post-title">加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-06-13 </span>
+        <span class="post-time"> 2020-06-21 </span>
         <div class="post-category">
             <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
             </div>
@@ -133,36 +133,41 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#为什么使用sni">为什么使用SNI</a></li>
-    <li><a href="#esni检测地址">ESNI检测地址</a></li>
-    <li><a href="#esni原理">ESNI原理</a></li>
-    <li><a href="#firefox-启用esni的方法">Firefox 启用ESNI的方法</a></li>
+    <li><a href="#特点">特点</a></li>
+    <li><a href="#使用方法">使用方法</a>
+      <ul>
+        <li><a href="#psfirefox的设置教程">ps:Firefox的设置教程</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <blockquote>
-<p>本文发布于2020-06-13，由于加密技术日新月异，可能本文在介绍某些技术时已不是最新版本，仅供参考，本文部分内容来自Cloudflare Blog:<a href="https://blog.cloudflare.com/zh/esni-zh/">https://blog.cloudflare.com/zh/esni-zh/</a>与<a href="https://blog.cloudflare.com/zh/encrypted-sni-zh/">https://blog.cloudflare.com/zh/encrypted-sni-zh/</a>，Firefox启用ESNI参考<a href="https://tecrobe.github.io/blog/post/doh-and-esni/">https://tecrobe.github.io/blog/post/doh-and-esni/</a>，转载请同时带上作者名称。</p>
+      <h2 id="前言">前言</h2>
+<blockquote>
+<p>在之前几篇中略微涉及到了DoH，可是有些DoH服务比如Cloudflare的在国内连接不是很稳定，而ADGuard的又不能调整要屏蔽的东西；用Adguardhome（ADguard的可私有部署实现）又需要一台服务器或能刷机的路由器，要不然就只能一直开着电脑了，要同时支持自己设置规则和无需服务器的找来找去只有NextDNS.io符合需求。</p>
 </blockquote>
-<h2 id="前言">前言</h2>
-<p>虽然TLS已经发展到了1.3版本了，可是一个短板至今仍未完全补齐。服务器为了区分您要访问的不同域名，根据不同域名返回不同的证书，为此TLS引入了一个扩展：SNI（<a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%E7%A7%B0%E6%8C%87%E7%A4%BA">详情看这</a>）您的ISP（互联网服务提供商）、网络中的设备可能都会看到您所访问的网站的域名。而G|F|W中也使用了SNI阻断（根据SNI来屏蔽网站）这一技术。因此，ESNI就应运而生了。</p>
-<h2 id="为什么使用sni">为什么使用SNI</h2>
-<p>从根本上说，SNI的存在是为了允许您在一个IP地址上托管多个加密的网站。早期的浏览器没有包含SNI扩展。因此，当发出建立HTTPS连接的请求时，web服务器没有太多信息来继续进行，并且只能回收web服务器正在监听的每个IP地址的单个SSL证书。</p>
-<p>这个问题的一个解决方案是，创建具有多个主题备用名称(SANs)的证书。这些证书将加密多个域的流量，这些域都可以托管在同一个IP上。Cloudflare就是这样处理来自不支持SNI的旧浏览器的HTTPS流量的。然而，我们限制这一功能仅供我们的付费客户使用，这和SANs不是一个很好的解决方案的原因一样：它们是一种黑客攻击，管理起来很麻烦，如果包含了太多域，可能会降低性能。</p>
-<p>最具弹性的解决方案是SNI。我认为的一个合理的类比是，把它想象成一个邮政信封。信封里的东西是受保护的，邮差是看不到的。而信封外面是街道地址，邮差根据它来将信封送到正确的建筑位置。在互联网上，web服务器的IP地址就相当于街道地址。</p>
-<p>然而，如果你住在一个多单元的大楼里，仅仅通过一个街道地址是不足以把信封送到正确的收件人手中的。为了补充街道地址，你要写上一个公寓号码或收件人的名字。这相当于SNI。如果web服务器承载多个域，SNI可以确保将请求路由到正确的站点，以便返回正确的SSL证书，从而能够加密和解密任何内容。</p>
-<h2 id="esni检测地址">ESNI检测地址</h2>
-<p><a href="https://www.cloudflare.com/ssl/encrypted-sni/">https://www.cloudflare.com/ssl/encrypted-sni/</a></p>
-<p>可以看看你的浏览器是否支持ESNI</p>
-<h2 id="esni原理">ESNI原理</h2>
-<p>先从SNI讲起<img src="https://i.loli.net/2020/06/14/ahiLu6BYtfjGIJb.png" alt="2020-6-14 11-55-57.png"></p>
-<p>比如我访问GitHub时浏览器会在Client Hello时将当前要访问的网站的域名以明文方式放在TLS扩展中一起传输。</p>
-<p>而支持ESNI的这不会有这一部分。ESNI的原理就是加密SNI的密钥与DNS记录一同分发，有的人会想DNS不也是明文传输的吗？但事实上在现在DoH，DoT的普及，使得这已不是个问题。</p>
-<h2 id="firefox-启用esni的方法">Firefox 启用ESNI的方法</h2>
-<p>首选项 - 常规 - 网络设置；启用基于HTTPS的DNS</p>
-<p>地址栏输入about:config，搜索network.security.esni.enabled，将值设为True，完成。</p>
-<p>访问前文提到的检测ESNI的网址，选择Run the test，看到Encrypted SNI打钩即可。</p>
+<h2 id="特点">特点</h2>
+<ul>
+<li>7天免登陆试用</li>
+<li>每月有30万次的免费DNS查询次数</li>
+<li>可以自己调整屏蔽规则</li>
+<li>有家长管理功能</li>
+<li>有统计和日志功能</li>
+</ul>
+<h2 id="使用方法">使用方法</h2>
+<p>登录NextDNS的官网<a href="https://nextdns.io">https://nextdns.io</a></p>
+<p><img src="https://i.loli.net/2020/06/21/uViPYhZTEgpSIKf.png" alt="2020-6-21 15-26-42.png"></p>
+<p>选择Try it now for free</p>
+<p><img src="https://i.loli.net/2020/06/21/32FLcyjZfqWTt1P.png" alt="2020-6-21 13-35-43.png"></p>
+<p>选择一个你喜欢的DNS加密方式，将EndPoints里的地址Copy到你的DNSCrypt软件中的配置，Done。</p>
+<h3 id="psfirefox的设置教程">ps:Firefox的设置教程</h3>
+<p><img src="https://i.loli.net/2020/06/21/vZc6SCXPOMAbTxY.png" alt="2020-6-21 15-55-24.png"></p>
+<p><img src="https://i.loli.net/2020/06/21/1b8IfiV5sCSRNv4.png" alt="2020-6-21 16-0-40.png"></p>
+<p><img src="https://i.loli.net/2020/06/21/zuB6xHC9NQv7WOw.png" alt="无标题.png"></p>
+<p><img src="https://i.loli.net/2020/06/21/YcWfKuH76GEizZ5.png" alt="2020-6-21 16-9-0.png"></p>
+<p><img src="https://i.loli.net/2020/06/21/Jevf83AOiCKyzMd.png" alt="2020-6-21 16-11-1.png"></p>
 
     </div>
 
@@ -173,7 +178,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-06-13</span>
+    <span class="item-content">2020-06-21</span>
   </p>
   
   
@@ -182,13 +187,9 @@
           <a href="/gulut-blog/tags/internet/">Internet</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/gulut-blog/post1/2020/06/21/2020-06-21-recommend-nextdns/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/gulut-blog/post1/2020/06/07/2020-06-07-w32tm-study-note/">
-            <span class="next-text nav-default">Windows Time(w32tm)折腾笔记</span>
+        
+        <a class="next" href="/gulut-blog/post1/2020/06/13/2020-06-13-talk-about-esni/">
+            <span class="next-text nav-default">为Firefox启用ESNI的方法</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -201,8 +202,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-06-13 22:37:17 \u002b0800 CST',
-        title: '为Firefox启用ESNI的方法',
+        id: '2020-06-21 13:15:06 \u002b0800 CST',
+        title: '加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法',
         clientID: '5cc11be58eb331dd9d56',
         clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
         repo: 'gulut-blog',
