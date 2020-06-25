@@ -6,11 +6,20 @@
     <description>Recent content on Gulut&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>&lt;a rel=&#39;Legal Information&#39; href=&#39;https://gulut.github.io/gulut-blog/gulut-blog/legal_information/&#39;&gt;Legal Information&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 21 Jun 2020 13:15:06 +0800</lastBuildDate>
+    <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
+    <lastBuildDate>Thu, 25 Jun 2020 18:38:08 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>旧浏览器体验 Opera 36</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/25/2020-06-25-old-browser-exp-opera-36/</link>
+      <pubDate>Thu, 25 Jun 2020 18:38:08 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/25/2020-06-25-old-browser-exp-opera-36/</guid>
+      <description>端午节快乐 前言 端午节期间，打算给某运行着Windows XP的古董机装个浏览器，找了一圈下来360极速浏览器和Opera是比较符合我的需求的，</description>
+    </item>
     
     <item>
       <title>加密DNS提供商推荐-NextDNS和Firefox启用DoH的方法</title>
@@ -117,7 +126,7 @@
       <pubDate>Sat, 30 May 2020 19:09:52 +0800</pubDate>
       
       <guid>https://gulut.github.io/gulut-blog/post1/2020/05/30/2020-05-30-talk-about-hugo-and-github-pages/</guid>
-      <description>#GitHub Pages托管个人静态网站教程 本教程仅粗略地谈谈大概步骤，如需详细步骤，可以参考其他教程 ###步骤 1.创建一个GitHub账号 链接在此：h</description>
+      <description>GitHub Pages托管个人静态网站教程 本教程仅粗略地谈谈大概步骤，如需详细步骤，可以参考其他教程 步骤 1.创建一个GitHub账号 链接在此：http</description>
     </item>
     
   </channel>

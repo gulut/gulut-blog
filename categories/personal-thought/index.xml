@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal Thought on Gulut&#39;s Blog</title>
+    <link>https://gulut.github.io/gulut-blog/categories/personal-thought/</link>
+    <description>Recent content in Personal Thought on Gulut&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
+    <lastBuildDate>Thu, 25 Jun 2020 18:38:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-thought/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>旧浏览器体验 Opera 36</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/25/2020-06-25-old-browser-exp-opera-36/</link>
+      <pubDate>Thu, 25 Jun 2020 18:38:08 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/25/2020-06-25-old-browser-exp-opera-36/</guid>
+      <description>端午节快乐 前言 端午节期间，打算给某运行着Windows XP的古董机装个浏览器，找了一圈下来360极速浏览器和Opera是比较符合我的需求的，</description>
+    </item>
+    
+  </channel>
+</rss>
