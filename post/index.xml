@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Thu, 25 Jun 2020 18:38:08 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2020 09:37:38 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AdGuard Home 入门教程</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/26/2020-06-26-adguard-home-tutorial/</link>
+      <pubDate>Fri, 26 Jun 2020 09:37:38 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/26/2020-06-26-adguard-home-tutorial/</guid>
+      <description>Step1 下载AdGuard Home 介于有的新手可能GitHub都没有用熟练,特此加入这一步骤 打开AdGuard Home 的仓库地址https://github.</description>
+    </item>
     
     <item>
       <title>旧浏览器体验 Opera 36</title>
