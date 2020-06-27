@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on Gulut&#39;s Blog</title>
+    <link>https://gulut.github.io/gulut-blog/tags/google/</link>
+    <description>Recent content in Google on Gulut&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
+    <lastBuildDate>Sat, 27 Jun 2020 12:16:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://gulut.github.io/gulut-blog/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何关闭Google的安全搜索功能</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/27/2020-06-27-how-to-close-google-safe-search/</link>
+      <pubDate>Sat, 27 Jun 2020 12:16:33 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/27/2020-06-27-how-to-close-google-safe-search/</guid>
+      <description>感谢 https://www.v2ex.com/t/684949 上帖子的提醒 方法1.不使用www.google.com.hk（Google香港）域名 直接访问 https://www.google.com/ 搜索；然后选择图中选项，关闭安全搜索。也</description>
+    </item>
+    
+  </channel>
+</rss>

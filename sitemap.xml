@@ -2,14 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gulut.github.io/gulut-blog/post1/2020/06/26/2020-06-26-adguard-home-tutorial/</loc>
-    <lastmod>2020-06-26T09:37:38+08:00</lastmod>
+    <loc>https://gulut.github.io/gulut-blog/categories/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gulut.github.io/gulut-blog/categories/</loc>
+    <loc>https://gulut.github.io/gulut-blog/tags/google/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/categories/personal-notes/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post1/2020/06/27/2020-06-27-how-to-close-google-safe-search/</loc>
+    <lastmod>2020-06-27T12:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post1/2020/06/26/2020-06-26-adguard-home-tutorial/</loc>
     <lastmod>2020-06-26T09:37:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -23,35 +65,7 @@
   </url>
   
   <url>
-    <loc>https://gulut.github.io/gulut-blog/</loc>
-    <lastmod>2020-06-26T09:37:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gulut.github.io/gulut-blog/tags/internet/</loc>
-    <lastmod>2020-06-26T09:37:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/categories/personal-notes/</loc>
-    <lastmod>2020-06-26T09:37:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/post/</loc>
-    <lastmod>2020-06-26T09:37:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
     <lastmod>2020-06-26T09:37:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

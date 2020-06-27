@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Fri, 26 Jun 2020 09:37:38 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 12:16:33 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何关闭Google的安全搜索功能</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/06/27/2020-06-27-how-to-close-google-safe-search/</link>
+      <pubDate>Sat, 27 Jun 2020 12:16:33 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/06/27/2020-06-27-how-to-close-google-safe-search/</guid>
+      <description>感谢 https://www.v2ex.com/t/684949 上帖子的提醒 方法1.不使用www.google.com.hk（Google香港）域名 直接访问 https://www.google.com/ 搜索；然后选择图中选项，关闭安全搜索。也</description>
+    </item>
     
     <item>
       <title>AdGuard Home 入门教程</title>
