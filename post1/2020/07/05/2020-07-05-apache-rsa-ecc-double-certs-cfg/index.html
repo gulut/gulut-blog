@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Apache服务器RSA和ECC双证书配置 - Gulut&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Gulut" /><meta name="description" content="0x00.（小白向）基础步骤 在httpd.conf开启监听443端口(曾经我就是忘记开443端口，还去到处查哪里有问题，后面才发现犯了低级错" /><meta name="keywords" content="Apache, RSA ECC" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/07/05/2020-07-05-apache-rsa-ecc-double-certs-cfg/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
+<link rel="manifest" href="/gulut-blog/manifest.json">
+<link rel="mask-icon" href="/gulut-blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/gulut-blog/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Apache服务器RSA和ECC双证书配置" />
+<meta property="og:description" content="0x00.（小白向）基础步骤 在httpd.conf开启监听443端口(曾经我就是忘记开443端口，还去到处查哪里有问题，后面才发现犯了低级错" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/07/05/2020-07-05-apache-rsa-ecc-double-certs-cfg/" />
+<meta property="article:published_time" content="2020-07-05T18:26:48+08:00" />
+<meta property="article:modified_time" content="2020-07-05T18:26:48+08:00" />
+<meta itemprop="name" content="Apache服务器RSA和ECC双证书配置">
+<meta itemprop="description" content="0x00.（小白向）基础步骤 在httpd.conf开启监听443端口(曾经我就是忘记开443端口，还去到处查哪里有问题，后面才发现犯了低级错">
+<meta itemprop="datePublished" content="2020-07-05T18:26:48&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-05T18:26:48&#43;08:00" />
+<meta itemprop="wordCount" content="715">
+
+
+
+<meta itemprop="keywords" content="Openssl,Apache," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apache服务器RSA和ECC双证书配置"/>
+<meta name="twitter:description" content="0x00.（小白向）基础步骤 在httpd.conf开启监听443端口(曾经我就是忘记开443端口，还去到处查哪里有问题，后面才发现犯了低级错"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/gulut-blog/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/gulut-blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/gulut-blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/gulut-blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/gulut-blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/gulut-blog/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Apache服务器RSA和ECC双证书配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-05 </span>
+        <div class="post-category">
+            <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0x00小白向基础步骤">0x00.（小白向）基础步骤</a></li>
+    <li><a href="#0x01修改httpd-sslconf文件">0x01.修改httpd-ssl.conf文件</a></li>
+    <li><a href="#0x02效果">0x02.效果</a></li>
+    <li><a href="#0x03参考资料">0x03.参考资料</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="0x00小白向基础步骤">0x00.（小白向）基础步骤</h2>
+<ol>
+<li>在httpd.conf开启监听443端口(曾经我就是忘记开443端口，还去到处查哪里有问题，后面才发现犯了低级错误)</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Listen 443
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>在httpd.conf引入ssl模块</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">LoadModule ssl_module modules/mod_ssl.so
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>确认当前服务器的根目录</li>
+</ol>
+<p>如果一启动httpd就报Can&rsquo;t Load Module或Error八成是目录不对，去加一行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ServerRoot &#34;目录&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>其中目录指的是bin的上一层目录就是有README.txt的那一层目录</p>
+<ol start="4">
+<li>引入httpd-ssl.conf配置</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Include conf/extra/httpd-ssl.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来的步骤才是重点</p>
+<h2 id="0x01修改httpd-sslconf文件">0x01.修改httpd-ssl.conf文件</h2>
+<p>默认情况下在conf/extra/httpd-ssl.conf</p>
+<p>推荐使用<a href="https://ssl-config.mozilla.org/">https://ssl-config.mozilla.org/</a> Mozilla的SSL配置工具生成一个，能够保证加密套件的配置是比较新的。</p>
+<p><img src="https://i.loli.net/2020/07/05/714y9kML2UtpBe3.png" alt="2020-7-5——2.png"></p>
+<p>其中Mozilla Configuration建议选Intermediate，兼顾兼容性与安全。</p>
+<p>复制下方的配置文件到你所习惯使用的编辑器</p>
+<p>加入以下配置在VirtualHost节点中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">DocumentRoot &#34;网站路径&#34;
+ServerName YourServerName
+</code></pre></td></tr></table>
+</div>
+</div><p>把YourServerName替换为你网站的域名；网站路径按实际填写</p>
+<p><img src="https://i.loli.net/2020/07/05/PWalO8x2kUbqRVo.png" alt="2020-7-5——1.png"></p>
+<p>按图中，把ECC证书放在前，RSA放在后。Apache会自动根据设备访问网站的Client Hello包返回对应证书。（p.s:新版的Apache证书和证书链要合并在一起放在SSLCertificateFile。旧版File只放网站证书，证书链要单独放在SSLCertificateChainFile里）</p>
+<h2 id="0x02效果">0x02.效果</h2>
+<p>Windows 7下（支持ECC）：<img src="https://i.loli.net/2020/07/05/esj1BwrkyKoACXz.png" alt="2020-07-05_200306.png"></p>
+<p>不支持ECC时：<img src="https://i.loli.net/2020/07/05/refQ7mzxBOg89Po.png" alt="2020-07-05_201048.png"></p>
+<p>p.s:待我找个WinXP的破机器时再补XP下的图</p>
+<h2 id="0x03参考资料">0x03.参考资料</h2>
+<p><a href="https://www.v2ex.com/t/259478">https://www.v2ex.com/t/259478</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Gulut</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-07-05</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/gulut-blog/tags/openssl/">Openssl</a>
+          <a href="/gulut-blog/tags/apache/">Apache</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/gulut-blog/post1/2020/07/04/2020-07-04-netsh-study-note/">
+            <span class="next-text nav-default">Windows折腾笔记-netsh的用法(不完整，待补充)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-07-05 18:26:48 \u002b0800 CST',
+        title: 'Apache服务器RSA和ECC双证书配置',
+        clientID: '5cc11be58eb331dd9d56',
+        clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
+        repo: 'gulut-blog',
+        owner: 'gulut',
+        admin: ['gulut'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/gulut" class="iconfont icon-github" title="github"></a>
+  <a href="https://gulut.github.io/gulut-blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020.05.30 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    
+    
+    <span class="author"><a href="/gulut-blog/legal_information">Legal Information</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/gulut-blog/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167947575-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

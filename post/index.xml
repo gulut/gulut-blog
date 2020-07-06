@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sat, 04 Jul 2020 20:51:40 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 18:26:48 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apache服务器RSA和ECC双证书配置</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/07/05/2020-07-05-apache-rsa-ecc-double-certs-cfg/</link>
+      <pubDate>Sun, 05 Jul 2020 18:26:48 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/07/05/2020-07-05-apache-rsa-ecc-double-certs-cfg/</guid>
+      <description>0x00.（小白向）基础步骤 在httpd.conf开启监听443端口(曾经我就是忘记开443端口，还去到处查哪里有问题，后面才发现犯了低级错</description>
+    </item>
     
     <item>
       <title>Windows折腾笔记-netsh的用法(不完整，待补充)</title>
