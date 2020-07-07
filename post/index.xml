@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 05 Jul 2020 18:26:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2020 10:23:31 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aria2配置文件个人备份</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/07/07/2020-07-07-aria2-config/</link>
+      <pubDate>Tue, 07 Jul 2020 10:23:31 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/07/07/2020-07-07-aria2-config/</guid>
+      <description>启动时指定配置 1 aria2c --conf-path=配置文件 -D Aria2.conf基础配置 来源：https://p3terx.com/archives</description>
+    </item>
     
     <item>
       <title>Apache服务器RSA和ECC双证书配置</title>

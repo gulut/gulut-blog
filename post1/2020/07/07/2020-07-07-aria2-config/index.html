@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Aria2配置文件个人备份 - Gulut&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Gulut" /><meta name="description" content="启动时指定配置 1 aria2c --conf-path=配置文件 -D Aria2.conf基础配置 来源：https://p3terx.com/archives" /><meta name="keywords" content="Aria2, configuration" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/07/07/2020-07-07-aria2-config/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
+<link rel="manifest" href="/gulut-blog/manifest.json">
+<link rel="mask-icon" href="/gulut-blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/gulut-blog/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Aria2配置文件个人备份" />
+<meta property="og:description" content="启动时指定配置 1 aria2c --conf-path=配置文件 -D Aria2.conf基础配置 来源：https://p3terx.com/archives" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/07/07/2020-07-07-aria2-config/" />
+<meta property="article:published_time" content="2020-07-07T10:23:31+08:00" />
+<meta property="article:modified_time" content="2020-07-07T10:23:31+08:00" />
+<meta itemprop="name" content="Aria2配置文件个人备份">
+<meta itemprop="description" content="启动时指定配置 1 aria2c --conf-path=配置文件 -D Aria2.conf基础配置 来源：https://p3terx.com/archives">
+<meta itemprop="datePublished" content="2020-07-07T10:23:31&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-07T10:23:31&#43;08:00" />
+<meta itemprop="wordCount" content="1640">
+
+
+
+<meta itemprop="keywords" content="aria2," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Aria2配置文件个人备份"/>
+<meta name="twitter:description" content="启动时指定配置 1 aria2c --conf-path=配置文件 -D Aria2.conf基础配置 来源：https://p3terx.com/archives"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/gulut-blog/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/gulut-blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/gulut-blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/gulut-blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/gulut-blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/gulut-blog/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Aria2配置文件个人备份</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-07 </span>
+        <div class="post-category">
+            <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#启动时指定配置">启动时指定配置</a></li>
+    <li><a href="#aria2conf基础配置">Aria2.conf基础配置</a></li>
+    <li><a href="#aria2conf-高级配置">Aria2.conf 高级配置</a>
+      <ul>
+        <li><a href="#为rpc服务启用tls">为RPC服务启用TLS</a></li>
+      </ul>
+    </li>
+    <li><a href="#aria2conf-example">aria2.conf Example</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="启动时指定配置">启动时指定配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">aria2c --conf-path=配置文件 -D
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="aria2conf基础配置">Aria2.conf基础配置</h2>
+<p>来源：<a href="https://p3terx.com/archives/use-aria2-under-windows.html">https://p3terx.com/archives/use-aria2-under-windows.html</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+
+# 日志
+log=aria2.log
+log-level=error
+
+## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+dir=E:\Downloads
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=32M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+file-allocation=falloc
+# 断点续传
+continue=true
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=3
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=5
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=5
+# 整体下载速度限制, 运行时可修改, 默认:0
+#max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+max-overall-upload-limit=1M
+# 单个任务上传速度限制, 默认:0
+#max-upload-limit=0
+# 禁用IPv6, 默认:false
+disable-ipv6=true
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=60
+
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+#event-poll=select
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+rpc-listen-port=6800
+# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
+#rpc-secret=&lt;TOKEN&gt;
+# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-user=&lt;USER&gt;
+# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
+#rpc-passwd=&lt;PASSWD&gt;
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413-52333
+# 单个种子最大连接数，0表示不限制，默认:55
+bt-max-peers=0
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=true
+# 打开IPv6 DHT功能, PT需要禁用
+enable-dht6=true
+# DHT网络监听端口, 默认:6881-6999
+dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+#bt-enable-lpd=false
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=true
+# 期望下载速度, 对少种的PT很有用, 默认:50K
+bt-request-peer-speed-limit=50M
+# 客户端伪装, PT需要
+peer-id-prefix=-UT3500-
+user-agent=uTorrent/3500(43580)
+# 最小分享率。当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=0
+# 最小做种时间。此选项设置为0时，将在BT任务下载完成后不进行做种。
+seed-time=0
+# 强制保存会话, 即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+force-save=true
+# BT校验相关, 默认:true
+#bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+#bt-save-metadata=false
+# 删除未选择文件
+bt-remove-unselected-file=true
+
+## BT 服务器地址 ##
+bt-tracker=
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="aria2conf-高级配置">Aria2.conf 高级配置</h2>
+<h3 id="为rpc服务启用tls">为RPC服务启用TLS</h3>
+<p>来源：<a href="https://www.moerats.com/archives/989/">https://www.moerats.com/archives/989/</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#是否启用RPC服务的SSL/TLS加密
+rpc-secure=true
+#申请的域名crt证书文件路径，自行修改
+rpc-certificate=Yourcert.crt
+##申请的域名key证书文件路径，自行修改
+rpc-private-key=Yourkey.key
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="aria2conf-example">aria2.conf Example</h2>
+<p><a href="https://github.com/fsaimon/aria2.conf">https://github.com/fsaimon/aria2.conf</a></p>
+<p><a href="https://github.com/P3TERX/aria2.conf">https://github.com/P3TERX/aria2.conf</a></p>
+<p><a href="https://www.jianshu.com/p/6adf79d29add">https://www.jianshu.com/p/6adf79d29add</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Gulut</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2020-07-07</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/gulut-blog/tags/aria2/">aria2</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/gulut-blog/post1/2020/07/05/2020-07-05-apache-rsa-ecc-double-certs-cfg/">
+            <span class="next-text nav-default">Apache服务器RSA和ECC双证书配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-07-07 10:23:31 \u002b0800 CST',
+        title: 'Aria2配置文件个人备份',
+        clientID: '5cc11be58eb331dd9d56',
+        clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
+        repo: 'gulut-blog',
+        owner: 'gulut',
+        admin: ['gulut'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/gulut" class="iconfont icon-github" title="github"></a>
+  <a href="https://gulut.github.io/gulut-blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020.05.30 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    
+    
+    <span class="author"><a href="/gulut-blog/legal_information">Legal Information</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/gulut-blog/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167947575-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
