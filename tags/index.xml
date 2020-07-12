@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Tue, 07 Jul 2020 10:23:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 12:00:35 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://gulut.github.io/gulut-blog/tags/android/</link>
+      <pubDate>Sun, 12 Jul 2020 12:00:35 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/tags/android/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>aria2</title>

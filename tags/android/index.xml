@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Gulut&#39;s Blog</title>
+    <link>https://gulut.github.io/gulut-blog/tags/android/</link>
+    <description>Recent content in Android on Gulut&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
+    <lastBuildDate>Sun, 12 Jul 2020 12:00:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://gulut.github.io/gulut-blog/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>adb常用命令</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/07/12/2020-07-12-awesome-adb/</link>
+      <pubDate>Sun, 12 Jul 2020 12:00:35 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/07/12/2020-07-12-awesome-adb/</guid>
+      <description>对应用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 对当前用户禁用 adb shell pm disable-user AppPackageName // 对本机禁用 adb shell pm disable AppPackageName // 启用应用 adb shell pm enable AppPackageName // 清除应用数据 adb shell pm clear AppPackageName // 卸载应用</description>
+    </item>
+    
+  </channel>
+</rss>
