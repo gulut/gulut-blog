@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 12 Jul 2020 12:00:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 18:18:51 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>记一次解决PING提示传输失败（General failure）的问题</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/07/26/2020-07-26-ping-general-failure-in-ipv6/</link>
+      <pubDate>Sun, 26 Jul 2020 18:18:51 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/07/26/2020-07-26-ping-general-failure-in-ipv6/</guid>
+      <description>副标题：坑人的Windows TCP/IP 状态缓存 起因 将一台Win7的电脑用休眠功能，休眠了一段时间，再次开机后发现ipv6 ping不通了。看网络连接的</description>
+    </item>
     
     <item>
       <title>adb常用命令</title>
