@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 26 Jul 2020 18:18:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 13:52:19 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DNS</title>
+      <link>https://gulut.github.io/gulut-blog/tags/dns/</link>
+      <pubDate>Fri, 31 Jul 2020 13:52:19 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internet</title>
+      <link>https://gulut.github.io/gulut-blog/tags/internet/</link>
+      <pubDate>Fri, 31 Jul 2020 13:52:19 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/tags/internet/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>windows</title>
@@ -58,29 +76,11 @@
     </item>
     
     <item>
-      <title>Internet</title>
-      <link>https://gulut.github.io/gulut-blog/tags/internet/</link>
-      <pubDate>Sat, 04 Jul 2020 20:51:40 +0800</pubDate>
-      
-      <guid>https://gulut.github.io/gulut-blog/tags/internet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Google</title>
       <link>https://gulut.github.io/gulut-blog/tags/google/</link>
       <pubDate>Sat, 27 Jun 2020 12:16:33 +0800</pubDate>
       
       <guid>https://gulut.github.io/gulut-blog/tags/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DNS</title>
-      <link>https://gulut.github.io/gulut-blog/tags/dns/</link>
-      <pubDate>Fri, 26 Jun 2020 09:37:38 +0800</pubDate>
-      
-      <guid>https://gulut.github.io/gulut-blog/tags/dns/</guid>
       <description></description>
     </item>
     

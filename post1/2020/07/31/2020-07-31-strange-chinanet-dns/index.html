@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>记一次解决PING提示传输失败（General failure）的问题 - Gulut&#39;s Blog</title>
+  <title>20200731中国电信DNS无法解析GitHub Pages - Gulut&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="副标题：坑人的Windows TCP/IP 状态缓存 起因 将一台Win7的电脑用休眠功能，休眠了一段时间，再次开机后发现ipv6 ping不通了。看网络连接的" /><meta name="keywords" content="Windows, Bug" />
+<meta name="author" content="Gulut" /><meta name="description" content="问题详情 中国电信统一下发的DNS无法解析github.io及其子域名，目前（2020-07-31）使用中国电信的IPv4 DNS和IPv6 DN" /><meta name="keywords" content="DNS, ChinaNet" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/07/26/2020-07-26-ping-general-failure-in-ipv6/" />
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/07/31/2020-07-31-strange-chinanet-dns/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="记一次解决PING提示传输失败（General failure）的问题" />
-<meta property="og:description" content="副标题：坑人的Windows TCP/IP 状态缓存 起因 将一台Win7的电脑用休眠功能，休眠了一段时间，再次开机后发现ipv6 ping不通了。看网络连接的" />
+<meta property="og:title" content="20200731中国电信DNS无法解析GitHub Pages" />
+<meta property="og:description" content="问题详情 中国电信统一下发的DNS无法解析github.io及其子域名，目前（2020-07-31）使用中国电信的IPv4 DNS和IPv6 DN" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/07/26/2020-07-26-ping-general-failure-in-ipv6/" />
-<meta property="article:published_time" content="2020-07-26T18:18:51+08:00" />
-<meta property="article:modified_time" content="2020-07-26T18:18:51+08:00" />
-<meta itemprop="name" content="记一次解决PING提示传输失败（General failure）的问题">
-<meta itemprop="description" content="副标题：坑人的Windows TCP/IP 状态缓存 起因 将一台Win7的电脑用休眠功能，休眠了一段时间，再次开机后发现ipv6 ping不通了。看网络连接的">
-<meta itemprop="datePublished" content="2020-07-26T18:18:51&#43;08:00" />
-<meta itemprop="dateModified" content="2020-07-26T18:18:51&#43;08:00" />
-<meta itemprop="wordCount" content="384">
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/07/31/2020-07-31-strange-chinanet-dns/" />
+<meta property="article:published_time" content="2020-07-31T13:52:19+08:00" />
+<meta property="article:modified_time" content="2020-07-31T13:52:19+08:00" />
+<meta itemprop="name" content="20200731中国电信DNS无法解析GitHub Pages">
+<meta itemprop="description" content="问题详情 中国电信统一下发的DNS无法解析github.io及其子域名，目前（2020-07-31）使用中国电信的IPv4 DNS和IPv6 DN">
+<meta itemprop="datePublished" content="2020-07-31T13:52:19&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-31T13:52:19&#43;08:00" />
+<meta itemprop="wordCount" content="224">
 
 
 
-<meta itemprop="keywords" content="Windows," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="记一次解决PING提示传输失败（General failure）的问题"/>
-<meta name="twitter:description" content="副标题：坑人的Windows TCP/IP 状态缓存 起因 将一台Win7的电脑用休眠功能，休眠了一段时间，再次开机后发现ipv6 ping不通了。看网络连接的"/>
+<meta itemprop="keywords" content="Internet,DNS," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="20200731中国电信DNS无法解析GitHub Pages"/>
+<meta name="twitter:description" content="问题详情 中国电信统一下发的DNS无法解析github.io及其子域名，目前（2020-07-31）使用中国电信的IPv4 DNS和IPv6 DN"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,12 +116,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">记一次解决PING提示传输失败（General failure）的问题</h1>
+      <h1 class="post-title">20200731中国电信DNS无法解析GitHub Pages</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-07-26 </span>
+        <span class="post-time"> 2020-07-31 </span>
         <div class="post-category">
-            <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
+            <a href="/gulut-blog/categories/news/"> News </a>
             </div>
         
       </div>
@@ -132,30 +132,35 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#起因">起因</a></li>
-    <li><a href="#解决过程">解决过程</a></li>
-    <li><a href="#结论">结论</a></li>
+    <li><a href="#问题详情">问题详情</a></li>
+    <li><a href="#临时解决办法">临时解决办法</a></li>
+    <li><a href="#备注">备注</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <blockquote>
-<p>副标题：坑人的Windows TCP/IP 状态缓存</p>
-</blockquote>
-<h2 id="起因">起因</h2>
-<p>将一台Win7的电脑用休眠功能，休眠了一段时间，再次开机后发现ipv6 ping不通了。看网络连接的提示发现是正常的<img src="https://i.loli.net/2020/07/26/YPprMzlTaRxfVLe.png" alt="1">，于是心生纳闷，怀疑是断网了。又打开了Baidu、Bing等站发现是正常的、且Ping IPv4是正常的。<img src="https://i.loli.net/2020/07/26/Do1rnfB8m3CEsbR.png" alt="2">。只有Ping IPv6，甚至是包括上级光猫IPv6也是异常的。</p>
-<p><img src="https://i.loli.net/2020/07/26/xe2rjCtGfz17HBE.png" alt="3">
-<img src="https://i.loli.net/2020/07/26/lwkHeKQpZr5yqBD.png" alt="4"></p>
-<h2 id="解决过程">解决过程</h2>
-<ol>
-<li>先打ipconfig /all</li>
-</ol>
-<p>发现：1.只剩下IPv4地址</p>
-<p>本打算重启一下，这时也过了十多分钟了，我打算再试一次，结果IPv6地址出现了。Ping也正常了</p>
-<p>其实。本应该用ipconfig /renew6 强制重新获取一个ipv6地址，但开始的网络连接告诉我Ipv6是有Internet的，给了我不少的迷惑。</p>
-<h2 id="结论">结论</h2>
-<p>Windows 7 刚从休眠恢复时，还未获得IPv6地址，但是查看状态时却为Internet，下次确认是否获得IP地址时，要以ipconfig为准。这也算是一个小bug了。</p>
+      <h2 id="问题详情">问题详情</h2>
+<p>中国电信统一下发的DNS无法解析github.io及其子域名，目前（2020-07-31）使用中国电信的IPv4 DNS和IPv6 DNS都会将github.io解析127.0.0.1，目前暂不清楚问题的根源。</p>
+<h2 id="临时解决办法">临时解决办法</h2>
+<p>换DNS，下面是一些国内的DNS</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">AliDNS 223.5.5.5 和 223.6.6.6
+AliDNS(IPv6) 2400:3200::1 和 2400:3200:baba::1
+114DNS 114.114.114.114 和 114.114.115.115
+腾讯DNS 119.29.29.29
+</code></pre></td></tr></table>
+</div>
+</div><p>或者Google DNS 8.8.8.8 8.8.4.4</p>
+<h2 id="备注">备注</h2>
+<p>此事应当不是G|F|W的行为，通过UDP 53端口向其他DNS发起请求得到的是正确的结果。八成是电信自己DNS设置的问题。</p>
 
     </div>
 
@@ -166,22 +171,19 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-07-26</span>
+    <span class="item-content">2020-07-31</span>
   </p>
   
   
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/gulut-blog/tags/windows/">Windows</a>
+          <a href="/gulut-blog/tags/internet/">Internet</a>
+          <a href="/gulut-blog/tags/dns/">DNS</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/gulut-blog/post1/2020/07/31/2020-07-31-strange-chinanet-dns/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">20200731中国电信DNS无法解析GitHub Pages</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/gulut-blog/post1/2020/07/12/2020-07-12-awesome-adb/">
-            <span class="next-text nav-default">adb常用命令</span>
+        
+        <a class="next" href="/gulut-blog/post1/2020/07/26/2020-07-26-ping-general-failure-in-ipv6/">
+            <span class="next-text nav-default">记一次解决PING提示传输失败（General failure）的问题</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -194,8 +196,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-07-26 18:18:51 \u002b0800 CST',
-        title: '记一次解决PING提示传输失败（General failure）的问题',
+        id: '2020-07-31 13:52:19 \u002b0800 CST',
+        title: '20200731中国电信DNS无法解析GitHub Pages',
         clientID: '5cc11be58eb331dd9d56',
         clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
         repo: 'gulut-blog',
