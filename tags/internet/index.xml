@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Fri, 31 Jul 2020 13:52:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2020 22:33:13 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020年Windows XP下360极速浏览器体验</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/08/27/2020-08-27-360-extreme-browser-in-winxp/</link>
+      <pubDate>Thu, 27 Aug 2020 22:33:13 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/08/27/2020-08-27-360-extreme-browser-in-winxp/</guid>
+      <description>前言 在老家中，还有一台较为古老的机子运行着Windows XP SP3，因为内存只有2GB的缘故，不是很想帮它升级到Windows 7，并且这机子一</description>
+    </item>
     
     <item>
       <title>20200731中国电信DNS无法解析GitHub Pages</title>
