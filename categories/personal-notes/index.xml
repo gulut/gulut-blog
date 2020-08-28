@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 26 Jul 2020 18:18:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2020 23:58:07 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>给你的GitHub Pages套一层CloudFlare吧！</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/08/28/2020-08-28-gh-pages-cloudflare-cdn/</link>
+      <pubDate>Fri, 28 Aug 2020 23:58:07 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/08/28/2020-08-28-gh-pages-cloudflare-cdn/</guid>
+      <description>前言 最近使用ISP原生的DNS时总是会遇到GitHub Pages的域名被解析到127.0.0.1；为了给访问者更好地体验，大部分人都会选择迁</description>
+    </item>
     
     <item>
       <title>记一次解决PING提示传输失败（General failure）的问题</title>
