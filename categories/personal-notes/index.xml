@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Fri, 28 Aug 2020 23:58:07 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 20:56:13 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Clumsy——弱网测试工具（介绍和简单上手）</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/09/20/2020-09-20-clumsy-a-bad-net-test-tool/</link>
+      <pubDate>Sun, 20 Sep 2020 20:56:13 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/09/20/2020-09-20-clumsy-a-bad-net-test-tool/</guid>
+      <description>Clumsy介绍 一个弱网测试软件，绿色版(需管理员权限)，支持Win7/Win8/Win8.1/Win10，可以模拟网络的丢包，延迟，重复，</description>
+    </item>
     
     <item>
       <title>给你的GitHub Pages套一层CloudFlare吧！</title>

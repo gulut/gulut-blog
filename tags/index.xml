@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Fri, 28 Aug 2020 23:58:07 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 20:56:13 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Internet</title>
+      <link>https://gulut.github.io/gulut-blog/tags/internet/</link>
+      <pubDate>Sun, 20 Sep 2020 20:56:13 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/tags/internet/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Github</title>
@@ -18,15 +27,6 @@
       <pubDate>Fri, 28 Aug 2020 23:58:07 +0800</pubDate>
       
       <guid>https://gulut.github.io/gulut-blog/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internet</title>
-      <link>https://gulut.github.io/gulut-blog/tags/internet/</link>
-      <pubDate>Thu, 27 Aug 2020 22:33:13 +0800</pubDate>
-      
-      <guid>https://gulut.github.io/gulut-blog/tags/internet/</guid>
       <description></description>
     </item>
     
