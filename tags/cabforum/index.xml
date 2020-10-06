@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CABForum on Gulut&#39;s Blog</title>
+    <link>https://gulut.github.io/gulut-blog/tags/cabforum/</link>
+    <description>Recent content in CABForum on Gulut&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
+    <lastBuildDate>Tue, 06 Oct 2020 11:36:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://gulut.github.io/gulut-blog/tags/cabforum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自建CA笔记-CAB论坛定义的证书OID</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/10/06/2020-10-06-cabforum-tlscert-oid/</link>
+      <pubDate>Tue, 06 Oct 2020 11:36:42 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/10/06/2020-10-06-cabforum-tlscert-oid/</guid>
+      <description>CAB的OID节点 The CA/Browser Forum node is: 2.23.140 意义：{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140)} 证书策略（1） 扩展认证（EV）（1）：2.23.140.1.1</description>
+    </item>
+    
+  </channel>
+</rss>

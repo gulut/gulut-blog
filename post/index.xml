@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 20:56:13 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2020 11:36:42 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自建CA笔记-CAB论坛定义的证书OID</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/10/06/2020-10-06-cabforum-tlscert-oid/</link>
+      <pubDate>Tue, 06 Oct 2020 11:36:42 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/10/06/2020-10-06-cabforum-tlscert-oid/</guid>
+      <description>CAB的OID节点 The CA/Browser Forum node is: 2.23.140 意义：{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140)} 证书策略（1） 扩展认证（EV）（1）：2.23.140.1.1</description>
+    </item>
     
     <item>
       <title>Clumsy——弱网测试工具（介绍和简单上手）</title>
