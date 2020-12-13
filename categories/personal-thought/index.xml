@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Thu, 27 Aug 2020 22:33:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 10:44:20 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-thought/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>对博客主题的小改变</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/12/13/2020-12-13-a-little-change-in-blogtheme/</link>
+      <pubDate>Sun, 13 Dec 2020 10:44:20 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/12/13/2020-12-13-a-little-change-in-blogtheme/</guid>
+      <description>更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 html &amp;lt;a href=&amp;quot;{{.Get 0}}&amp;quot; referrerpolicy=&amp;quot;no-referrer&amp;quot; class=&amp;quot;noreffer-link&amp;quot;&amp;gt;{{.Get 1}}&amp;lt;/a&amp;gt; 用法</description>
+    </item>
     
     <item>
       <title>2020年Windows XP下360极速浏览器体验</title>

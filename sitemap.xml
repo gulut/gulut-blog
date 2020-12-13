@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gulut.github.io/gulut-blog/categories/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/hugo/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/categories/personal-thought/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post1/2020/12/13/2020-12-13-a-little-change-in-blogtheme/</loc>
+    <lastmod>2020-12-13T10:44:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gulut.github.io/gulut-blog/tags/cabforum/</loc>
     <lastmod>2020-10-06T11:36:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,36 +58,8 @@
   </url>
   
   <url>
-    <loc>https://gulut.github.io/gulut-blog/categories/</loc>
-    <lastmod>2020-11-08T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/</loc>
-    <lastmod>2020-11-08T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gulut.github.io/gulut-blog/categories/personal-notes/</loc>
     <lastmod>2020-10-06T11:36:42+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/post/</loc>
-    <lastmod>2020-11-08T16:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
-    <lastmod>2020-11-08T16:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -80,13 +101,6 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/post1/2020/08/27/2020-08-27-360-extreme-browser-in-winxp/</loc>
-    <lastmod>2020-08-27T22:33:13+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/categories/personal-thought/</loc>
     <lastmod>2020-08-27T22:33:13+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -298,13 +312,6 @@
   <url>
     <loc>https://gulut.github.io/gulut-blog/tags/git/</loc>
     <lastmod>2020-05-31T11:11:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/hugo/</loc>
-    <lastmod>2020-06-25T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
