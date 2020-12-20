@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 html &amp;lt;a href=&amp;quot;{{.Get 0}}&amp;quot; referrerpolicy=&amp;quot;no-referrer&amp;quot; class=&amp;quot;noreffer-link&amp;quot;&amp;gt;{{.Get 1}}&amp;lt;/a&amp;gt; 用法" /><meta name="keywords" content="Blog, Theme" />
+<meta name="author" content="Gulut" /><meta name="description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 &amp;lt;a href=&amp;quot;{{.Get 0}}&amp;quot; referrerpolicy=&amp;quot;no-referrer&amp;quot; class=&amp;quot;noreffer-link&amp;quot;&amp;gt;{{.Get 1}}&amp;lt;/a&amp;gt; {{.Get 1}}-- 用" /><meta name="keywords" content="Blog, Theme" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="对博客主题的小改变" />
-<meta property="og:description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 html &lt;a href=&quot;{{.Get 0}}&quot; referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt; 用法" />
+<meta property="og:description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 &lt;a href=&quot;{{.Get 0}}&quot; referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt; {{.Get 1}}-- 用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/12/13/2020-12-13-a-little-change-in-blogtheme/" />
 <meta property="article:published_time" content="2020-12-13T10:44:20+08:00" />
-<meta property="article:modified_time" content="2020-12-13T10:44:20+08:00" />
+<meta property="article:modified_time" content="2020-12-20T00:23:21+08:00" />
 <meta itemprop="name" content="对博客主题的小改变">
-<meta itemprop="description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 html &lt;a href=&quot;{{.Get 0}}&quot; referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt; 用法">
+<meta itemprop="description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 &lt;a href=&quot;{{.Get 0}}&quot; referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt; {{.Get 1}}-- 用">
 <meta itemprop="datePublished" content="2020-12-13T10:44:20&#43;08:00" />
-<meta itemprop="dateModified" content="2020-12-13T10:44:20&#43;08:00" />
-<meta itemprop="wordCount" content="130">
+<meta itemprop="dateModified" content="2020-12-20T00:23:21&#43;08:00" />
+<meta itemprop="wordCount" content="222">
 
 
 
 <meta itemprop="keywords" content="Hugo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="对博客主题的小改变"/>
-<meta name="twitter:description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 html &lt;a href=&quot;{{.Get 0}}&quot; referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt; 用法"/>
+<meta name="twitter:description" content="更新内容 增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头 &lt;a href=&quot;{{.Get 0}}&quot; referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt; {{.Get 1}}-- 用"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#更新内容">更新内容</a></li>
+    <li><a href="#更新内容">更新内容</a>
+      <ul>
+        <li><a href="#小问题">小问题</a></li>
+      </ul>
+    </li>
     <li><a href="#未来的更新">未来的更新</a></li>
   </ul>
 </nav>
@@ -143,11 +147,25 @@
 <ol>
 <li>增加了两个ShortCode，代码都很简短。一个是应用图片时不带reffer头，一个是链接跳转时不带reffer头</li>
 </ol>
-<p><code>html &lt;a href=&quot;{{.Get 0}}&quot;  referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt;</code></p>
+<code>
+&lt;a href=&quot;{{.Get 0}}&quot;  referrerpolicy=&quot;no-referrer&quot; class=&quot;noreffer-link&quot;&gt;{{.Get 1}}&lt;/a&gt;
+<!--<a href="{{.Get 0}}"  referrerpolicy="no-referrer" class="noreffer-link">{{.Get 1}}</a>-->
+</code>
 <p>用法很简单</p>
 <p><img src="https://i.loli.net/2020/12/13/7OhS6x8UZXNnuEP.png" alt="screenshot1.png"></p>
 <ol start="2">
 <li>其实没有了（笑</li>
+</ol>
+<h3 id="小问题">小问题</h3>
+<ol>
+<li>需要允许hugo以不安全模式编译，方式是在config.toml里加入下面代码</li>
+</ol>
+<code>
+[markup.goldmark.renderer]
+<p>unsafe = true
+</code></p>
+<ol start="2">
+<li>连接文字中的需要进行HTML转义，否则会变成&lt;a&gt;标签套&lt;a&gt;标签</li>
 </ol>
 <h2 id="未来的更新">未来的更新</h2>
 <ol>
@@ -164,7 +182,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-12-13</span>
+    <span class="item-content">2020-12-20</span>
   </p>
   
   
