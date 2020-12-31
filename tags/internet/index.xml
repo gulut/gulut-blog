@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please see https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 20:56:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 23:03:43 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Win-Acme 的神奇bug（v2.1.13.1）</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2020/12/27/2020-12-27-win-acme-bug/</link>
+      <pubDate>Sun, 27 Dec 2020 23:03:43 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2020/12/27/2020-12-27-win-acme-bug/</guid>
+      <description>前言 试图使用win-acme来为我的一个不重要的域名申请Let&amp;rsquo;s Encrypt证书时遇到一些不大不小的坑正好写出来好让后人避坑</description>
+    </item>
     
     <item>
       <title>Clumsy——弱网测试工具（介绍和简单上手）</title>
