@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>基于Nginx的反代使GitHub部分功能复活 - Gulut&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Gulut" /><meta name="description" content="0.起因 pixiv于最近不知道更换了什么，原有的免服务器上Pixiv都失效了，不过好在github.com/mashirozx/Pixiv-" /><meta name="keywords" content="github, raw file download" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2021/02/08/2021-02-08-pixiv-bypass-way-update/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
+<link rel="manifest" href="/gulut-blog/manifest.json">
+<link rel="mask-icon" href="/gulut-blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/gulut-blog/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="基于Nginx的反代使GitHub部分功能复活" />
+<meta property="og:description" content="0.起因 pixiv于最近不知道更换了什么，原有的免服务器上Pixiv都失效了，不过好在github.com/mashirozx/Pixiv-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2021/02/08/2021-02-08-pixiv-bypass-way-update/" />
+<meta property="article:published_time" content="2021-02-08T21:40:05+08:00" />
+<meta property="article:modified_time" content="2021-02-08T21:40:05+08:00" />
+<meta itemprop="name" content="基于Nginx的反代使GitHub部分功能复活">
+<meta itemprop="description" content="0.起因 pixiv于最近不知道更换了什么，原有的免服务器上Pixiv都失效了，不过好在github.com/mashirozx/Pixiv-">
+<meta itemprop="datePublished" content="2021-02-08T21:40:05&#43;08:00" />
+<meta itemprop="dateModified" content="2021-02-08T21:40:05&#43;08:00" />
+<meta itemprop="wordCount" content="698">
+
+
+
+<meta itemprop="keywords" content="Internet," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基于Nginx的反代使GitHub部分功能复活"/>
+<meta name="twitter:description" content="0.起因 pixiv于最近不知道更换了什么，原有的免服务器上Pixiv都失效了，不过好在github.com/mashirozx/Pixiv-"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/gulut-blog/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/gulut-blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/gulut-blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/gulut-blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/gulut-blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/gulut-blog/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">基于Nginx的反代使GitHub部分功能复活</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-08 </span>
+        <div class="post-category">
+            <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0起因">0.起因</a></li>
+    <li><a href="#1快速教程">1.快速教程</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="0起因">0.起因</h2>
+<blockquote>
+<p>pixiv于最近不知道更换了什么，原有的免服务器上Pixiv都失效了，不过好在<a href="https://github.com/mashirozx/Pixiv-Nginx">github.com/mashirozx/Pixiv-Nginx</a>的作者和<a href="https://github.com/CeuiLiSA/Pixiv-Shaft">github.com/CeuiLiSA/Pixiv-Shaft
+</a>的作者都较快地更新了上面的项目，因此如果大家在用上面几个软件时遇到问题，可以试试看更新到最新版。</p>
+</blockquote>
+<p>但我又想到github的部分功能是否这样就能复活呢？答案是肯定的。</p>
+<h2 id="1快速教程">1.快速教程</h2>
+<p>Step1. 前往 <a href="https://github.com/mashirozx/Pixiv-Nginx">https://github.com/mashirozx/Pixiv-Nginx</a> Clone Zip下来。</p>
+<p>Step2. 用你喜欢的方式（比如XCA），详情可Google一下xca或OpenSSL生成证书（注：OpenSSL有坑，一定要确保生成出来的证书版本是V3，否则不支持SAN（使用者备用名称），详细见<a href="https://www.cnblogs.com/real-bert/p/11807225.html">https://www.cnblogs.com/real-bert/p/11807225.html</a></p>
+<blockquote>
+<p>如不会请复制以下内容到conf\ca\github.txt文件</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">-----BEGIN CERTIFICATE-----
+MIIDdjCCAl6gAwIBAgIIO0kp5hTXCQMwDQYJKoZIhvcNAQELBQAwHjEcMBoGA1UE
+AxMTdHV0b3JpYWwudGVzdC5sb2NhbDAeFw0yMTAyMDgwMzU3MDBaFw00MDAyMDgx
+ODU3MDBaMB4xHDAaBgNVBAMTE3R1dG9yaWFsLnRlc3QubG9jYWwwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDS+FN7M/jMjrM3nc+TSPd+1+SMYSxHG0DF
+AJ+Nc6xBv05285br+7verHcbAvAj/YGz2bzNmqwR1suYawhNK5+BfL1QHCCpY0Aa
+zuTVMWn2cSE7CZcwYfdq/Y18AlS5pOLzWS8bHUU9X8YNYfQT+B9nt+QfWBRg1Bez
+eAj+29nWQHqJuzN45ZOUxeJNQk6QoobKBjBmR+lNkoNNMGuruCxWFO6zawZ2lyBZ
+lGIHbh6KXCH1McSP28EKjpbjQVPl9PT7zMqx4gBpxByim9MIY+OkopxBQw7J3iGY
+h8zVvCcAeOKfv1wBdw9q/Am5wP3iznm/Fta6o+natgWNIL4fln8jAgMBAAGjgbcw
+gbQwCwYDVR0PBAQDAgeAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjCB
+hQYDVR0RBH4wfIIXKi5naXRodWJ1c2VyY29udGVudC5jb22CFWdpdGh1YnVzZXJj
+b250ZW50LmNvbYIJZ2l0aHViLmlvggsqLmdpdGh1Yi5pb4IMKi5naXRodWIuY29t
+ggpnaXRodWIuY29tghhvbmx5LXlvdS5waTc5NzMyNTQ1Ni54eXowDQYJKoZIhvcN
+AQELBQADggEBAJ1Y+DDqG7YkpoRCXu29eThRvfgGYYPQdNgRNZO+ooT3myt/yl0+
+AFMfZtF+m3bwlVLwUIVp2+ddQCT3pEtFEijaWj/RD02tWbjkKE73xtRktPlGgBmb
+SYaDLKuxe9lB5EDQbix7xRbaQJIOJd+S022vQrXHZ5Z1i8GciRaxmpcLtxuy9Vnm
+BW5ZoY0DTimyIBvI4zCZHDhwbbLpYj6pF0XOXcaaNFeFisrHXxlQXMk5UJ/uLXeR
+nkcW99EFO0LApDUOM4gZP+oc/puHXJXsTfi32N+Q/W7KE/DueDznIFMlCzpmYBdf
+dtLIK3JKel0oEk8W9FzaajAL2QqXDDHkjCw=
+-----END CERTIFICATE-----
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>请复制以下内容到conf\ca\github-pri.txt文件</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA0vhTezP4zI6zN53Pk0j3ftfkjGEsRxtAxQCfjXOsQb9OdvOW
+6/u73qx3GwLwI/2Bs9m8zZqsEdbLmGsITSufgXy9UBwgqWNAGs7k1TFp9nEhOwmX
+MGH3av2NfAJUuaTi81kvGx1FPV/GDWH0E/gfZ7fkH1gUYNQXs3gI/tvZ1kB6ibsz
+eOWTlMXiTUJOkKKGygYwZkfpTZKDTTBrq7gsVhTus2sGdpcgWZRiB24eilwh9THE
+j9vBCo6W40FT5fT0+8zKseIAacQcopvTCGPjpKKcQUMOyd4hmIfM1bwnAHjin79c
+AXcPavwJucD94s55vxbWuqPp2rYFjSC+H5Z/IwIDAQABAoIBAQCWioafepWF+ine
+fOi7E60vwQSgO1LqJoNQUEKKIEmB3O4zqVw/ZjFIEs8m4jDTrbjYyn2URVOVoy1C
+xNV2o7M9JfK88GVKGb2Lo6jcjFcteMqaoxxUdQOlP+qu28bzdbpQpYockgVvZyEf
+OY9+lGZsj2bkCuj3s0B6WyQoIF9QJwSzs8Gv6IOsaRWxPtg1ZkLPNyjr331TtnS0
+5uKUJ36XF6hFjSrwz9wv1c8+UUYtSqpFfhtfuWqwGgzj9j1g+pecfRluQWSre+90
+KS0aBdJ+htbxgl3l72Ky97zkzHnvu8PE3W7gwtp1AcxJQAqY9lgkOp1kuqOLJixv
+xfgPoiQxAoGBAO/zK+MkXGGvpDvsv7T1H1dqNIhfX7ZoDjXfFt2RV1FO4ykksiIt
+u9nP7ZhAx81pP6Lz+NpAJe1Y2d8uKHMF43A/obD8F1beLs5I7glwsH9TIyybA3SV
+KPKZXar+42M1WWyxKJkvccLuATzZEWc2QiATrE5o4sjcokRHIjSN42fbAoGBAOEU
+6Y2yljFhgZFjHk+B9Na9PzinlThZBIhmxaqHvbiQn1GpmoB6vmvQJH3IYG5K7Iij
+cpNWqeKvYuUknc/ANt7+LBB3v4460cCVv8H85DD8LOei00yJXUf9ann4ePwLgwcb
++AAR5n6PsGTGYto0FtiwdvSaKqtohMbzT2AgVWxZAoGBALb1UOpyCCrIFU9H9ukQ
+2qP5rDKrnjxkXSmAgFvTfaPWpejyPQ1Il+q926lzA6ZBcS9cHcy0ivbN/9pnxJnn
+zIMDUdO0dEtdQI00GKSEE2ASUUiqrdjP/xf0DvLaRSGZRSVWc+FRxsleVv1Bej6b
+pZH1zjU/TmTfrq6nGpK9+b5vAoGACQTPfvAC+KORj4PLOSBZ8SjQGbMNVZ6rgdOs
+Y/LgdT7GQ31qRW+lpahHbgrTYlf6NldmReUZFY41hjz7XdGz4SeKGHbT5B0TPoZB
+ksJRWm0gV3+8u7pdVH8g/xYnsuG7NFO4kjglZjjXtpIEb/3aVIBto8txnkCn4Vjq
+e02QXrECgYEAmhICWulY7jXUfcveSUMexggw/gEG0UHRreRW+Z1UMWWUW+S5ZWMn
+9t+MqIDz/R67LxTmDut1E6WuoHkiyxQDuXGMeM6bsz63XQcUl/n+E7gWHyZe+6B4
+2ITajk9LVQOjrv4UbG8uYZ+3NQVw5odyI03lX5f8wbOlVAAuktHikxM=
+-----END RSA PRIVATE KEY-----
+</code></pre></td></tr></table>
+</div>
+</div><p>Step3. 解压，进入conf目录下修改pixiv.conf文件加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">server {
+  listen 443 ssl;
+  server_name *.github.com;
+  
+  ssl_certificate ca/github.txt;
+  ssl_certificate_key ca/github-pri.txt;
+  
+  location / {
+        proxy_pass https://140.82.121.3;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Real_IP $remote_addr;
+        proxy_set_header User-Agent $http_user_agent;
+        proxy_set_header Accept-Encoding &#39;&#39;; 
+        proxy_buffering off;
+    }
+}
+server {
+  listen 443 ssl;
+  server_name *.githubusercontent.com;
+  
+  ssl_certificate ca/github.txt;
+  ssl_certificate_key ca/github-pri.txt;
+  
+  location / {
+        proxy_pass https://151.101.112.133;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Real_IP $remote_addr;
+        proxy_set_header User-Agent $http_user_agent;
+        proxy_set_header Accept-Encoding &#39;&#39;; 
+        proxy_buffering off;
+    }
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>Step4. 最后在hosts文件中加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">127.0.0.1 gist.github.com
+127.0.0.1 raw.githubusercontent.com
+127.0.0.1 api.github.com
+127.0.0.1 avatars.githubusercontent.com
+127.0.0.1 camo.githubusercontent.com
+</code></pre></td></tr></table>
+</div>
+</div><p>你就能下载GitHub 的RAW了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Gulut</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2021-02-08</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/gulut-blog/tags/internet/">Internet</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/gulut-blog/post1/2020/12/27/2020-12-27-win-acme-bug/">
+            <span class="next-text nav-default">Win-Acme 的神奇bug（v2.1.13.1）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2021-02-08 21:40:05 \u002b0800 CST',
+        title: '基于Nginx的反代使GitHub部分功能复活',
+        clientID: '5cc11be58eb331dd9d56',
+        clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
+        repo: 'gulut-blog',
+        owner: 'gulut',
+        admin: ['gulut'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/gulut" class="iconfont icon-github" title="github"></a>
+  <a href="https://gulut.github.io/gulut-blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    
+    
+    <span class="author"><a href="/gulut-blog/legal_information">Legal Information</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/gulut-blog/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167947575-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
