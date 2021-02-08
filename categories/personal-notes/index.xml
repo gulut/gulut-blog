@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sun, 27 Dec 2020 23:03:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Feb 2021 21:40:05 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于Nginx的反代使GitHub部分功能复活</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2021/02/08/2021-02-08-pixiv-bypass-way-update/</link>
+      <pubDate>Mon, 08 Feb 2021 21:40:05 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2021/02/08/2021-02-08-pixiv-bypass-way-update/</guid>
+      <description>0.起因 pixiv于最近不知道更换了什么，原有的免服务器上Pixiv都失效了，不过好在github.com/mashirozx/Pixiv-</description>
+    </item>
     
     <item>
       <title>Win-Acme 的神奇bug（v2.1.13.1）</title>
