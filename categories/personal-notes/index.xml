@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Mon, 08 Feb 2021 21:40:05 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jun 2021 14:44:45 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tortoisegit新手向教程：使用SSH Key登录github</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2021/06/14/2021-06-14-tortoisegit-use/</link>
+      <pubDate>Mon, 14 Jun 2021 14:44:45 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2021/06/14/2021-06-14-tortoisegit-use/</guid>
+      <description>正好端午有点空，让我来水一篇文章（因为sm.ms图床有时稳定性不好，本文使用github图床，如打不开则需科学上网） 1.前言 关于小乌龟（To</description>
+    </item>
     
     <item>
       <title>基于Nginx的反代使GitHub部分功能复活</title>

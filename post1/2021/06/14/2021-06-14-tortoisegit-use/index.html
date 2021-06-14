@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>关于看不见本站图片以及Sogou图床防盗链解决方法 - Gulut&#39;s Blog</title>
+  <title>Tortoisegit新手向教程：使用SSH Key登录github - Gulut&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref" /><meta name="keywords" content="防盗链, Referer Control" />
+<meta name="author" content="Gulut" /><meta name="description" content="正好端午有点空，让我来水一篇文章（因为sm.ms图床有时稳定性不好，本文使用github图床，如打不开则需科学上网） 1.前言 关于小乌龟（To" /><meta name="keywords" content="Github, Git" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/" />
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2021/06/14/2021-06-14-tortoisegit-use/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="关于看不见本站图片以及Sogou图床防盗链解决方法" />
-<meta property="og:description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref" />
+<meta property="og:title" content="Tortoisegit新手向教程：使用SSH Key登录github" />
+<meta property="og:description" content="正好端午有点空，让我来水一篇文章（因为sm.ms图床有时稳定性不好，本文使用github图床，如打不开则需科学上网） 1.前言 关于小乌龟（To" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/06/06/2020-06-06-about-cant-see-imgs-and-referer-thing/" />
-<meta property="article:published_time" content="2020-06-06T19:29:04+08:00" />
-<meta property="article:modified_time" content="2021-06-14T00:01:12+08:00" />
-<meta itemprop="name" content="关于看不见本站图片以及Sogou图床防盗链解决方法">
-<meta itemprop="description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref">
-<meta itemprop="datePublished" content="2020-06-06T19:29:04&#43;08:00" />
-<meta itemprop="dateModified" content="2021-06-14T00:01:12&#43;08:00" />
-<meta itemprop="wordCount" content="233">
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2021/06/14/2021-06-14-tortoisegit-use/" />
+<meta property="article:published_time" content="2021-06-14T14:44:45+08:00" />
+<meta property="article:modified_time" content="2021-06-14T14:44:45+08:00" />
+<meta itemprop="name" content="Tortoisegit新手向教程：使用SSH Key登录github">
+<meta itemprop="description" content="正好端午有点空，让我来水一篇文章（因为sm.ms图床有时稳定性不好，本文使用github图床，如打不开则需科学上网） 1.前言 关于小乌龟（To">
+<meta itemprop="datePublished" content="2021-06-14T14:44:45&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-14T14:44:45&#43;08:00" />
+<meta itemprop="wordCount" content="1028">
 
 
 
-<meta itemprop="keywords" content="sogou," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于看不见本站图片以及Sogou图床防盗链解决方法"/>
-<meta name="twitter:description" content="Example 在前文介绍xca的文章中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。 解决方法 安装Ref"/>
+<meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tortoisegit新手向教程：使用SSH Key登录github"/>
+<meta name="twitter:description" content="正好端午有点空，让我来水一篇文章（因为sm.ms图床有时稳定性不好，本文使用github图床，如打不开则需科学上网） 1.前言 关于小乌龟（To"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,10 +116,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">关于看不见本站图片以及Sogou图床防盗链解决方法</h1>
+      <h1 class="post-title">Tortoisegit新手向教程：使用SSH Key登录github</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-06-06 </span>
+        <span class="post-time"> 2021-06-14 </span>
         <div class="post-category">
             <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
             </div>
@@ -132,39 +132,63 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#example">Example</a></li>
-    <li><a href="#解决方法">解决方法</a>
+    <li><a href="#1前言">1.前言</a></li>
+    <li><a href="#2使用教程">2.使用教程</a>
       <ul>
-        <li><a href="#图片测试">图片测试</a></li>
+        <li><a href="#i下载安装">I.下载安装</a></li>
+        <li><a href="#iissh密钥对生成和导入github">II.ssh密钥对生成和导入github</a></li>
+        <li><a href="#iii导入key到本地">III.导入key到本地</a></li>
       </ul>
     </li>
-    <li><a href="#更新">更新</a></li>
+    <li><a href="#3注意事项">3.注意事项</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="example">Example</h2>
-<p>在前文介绍<a href="https://gulut.github.io/gulut-blog/post1/2020/06/05/2020-06-05-manage-cert-by-xca/">xca的文章</a>中，图片是加载不出来的。因为图片我是用Sogou图床的，可以右键图片看看，或用F12开发者工具看。</p>
-<h2 id="解决方法">解决方法</h2>
-<p>安装<a href="https://chrome.google.com/webstore/detail/referer-control/hnkcfpcejkafcihlgbojoidoihckciin/related?hl=zh-CN">Referer Control</a>（没有科学上网环境的，请关注评论区），复制教程链接</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">https://new-service.biliapi.net/picture/chatres/nulloTGPSRzvKY.png
-</code></pre></td></tr></table>
-</div>
-</div><p>到地址栏手动打开，按图中设置即可。</p>
-<p>图中网址为：https://*.sogoucdn.com/</p>
-<h3 id="图片测试">图片测试</h3>
-<p><del>如设置正常，您应当能看见下面的图片</del></p>
-<p>不用试了，搜狗图床已挂，有事请烧纸。
-<img src="https://img01.sogoucdn.com/app/a/100520146/A9F9BF53C9B55CE7EC96C38AB76B09CA" alt="">
-<img src="https://img04.sogoucdn.com/app/a/100520146/F068F9F995B73E42EE1EA8F46EAA2554" alt=""></p>
-<h2 id="更新">更新</h2>
-<p>全站图片直接换成<del>bilibili图床</del> sm.ms 和 github issue图床了，应该能显示了吧。</p>
+      <blockquote>
+<p>正好端午有点空，让我来<del>水一篇文章</del>（因为sm.ms图床有时稳定性不好，本文使用github图床，如打不开则需科学上网）</p>
+</blockquote>
+<h2 id="1前言">1.前言</h2>
+<p>关于<a href="https://tortoisegit.org/">小乌龟（Tortoisegit）</a>，大概有用过git的都或多或少的有了解，它是一个可视化的Git管理工具</p>
+<p><img src="https://user-images.githubusercontent.com/66124531/121885657-f9f63880-cd46-11eb-95bd-f5b934a10caf.png" alt=""></p>
+<p>图1 Tortoisegit</p>
+<p><img src="https://user-images.githubusercontent.com/66124531/121886658-3ece9f00-cd48-11eb-8cdb-8e66470328f5.png" alt=""></p>
+<p>图2 可视化的git提交记录</p>
+<p>所以要如何使用呢？</p>
+<h2 id="2使用教程">2.使用教程</h2>
+<h3 id="i下载安装">I.下载安装</h3>
+<p><a href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a> 分为32位和64位，按你实际选择。下面的 Language Packs找到Chinese, simplified下载即可。注意要先安装Download TortoiseGit 2.12.0 - 32-bit 或64-bit的后装语言包。</p>
+<p>如果是入门的新手，通常还未装git本体，tortoisegit只是git的可视化Windows shell。git本体可在<a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>或<a href="https://gitforwindows.org/">https://gitforwindows.org/</a>下载到。</p>
+<p>如果刚才没有选择运行小乌龟的首次启动向导，我们还可以在开始菜单找到TortoiseGit的设置(Settings)<img src="https://user-images.githubusercontent.com/66124531/121899866-637e4300-cd57-11eb-8bda-3ebccd45ef5d.png" alt="">打开。</p>
+<p>选择重新运行首次启动向导，选择语言，git路径后要注意<img src="https://user-images.githubusercontent.com/66124531/121900664-3aaa7d80-cd58-11eb-9f99-e93c1aa39e4d.png" alt="">，<strong>ssh要选择TortoiseGitPlink，否则后续使用ssh登录git时会报找不到文件错误。</strong></p>
+<p>此时基本的安装就完成了。</p>
+<h3 id="iissh密钥对生成和导入github">II.ssh密钥对生成和导入github</h3>
+<p>打开开始菜单，找到PuTTYGen，打开</p>
+<p><img src="https://user-images.githubusercontent.com/66124531/121901624-231fc480-cd59-11eb-8b0a-01e1cc4b64ee.png" alt=""></p>
+<p>选择Generate，然后让鼠标在这个窗口里多动动。</p>
+<p><img src="https://user-images.githubusercontent.com/66124531/121905545-d938dd80-cd5c-11eb-9327-b6e0c1bead4f.png" alt=""></p>
+<p>图 导出公钥和私钥</p>
+<p>然后导出公钥和私钥。（注：如果你想增强私钥的保密性可以在Key Passphrase输入密码，下面的confirm passphrase为确认密码。这样导出的私钥就是加密的了）</p>
+<p>打开github，点击右上角的头像，打开settings。从左侧菜单找到SSH and GPG keys，选择New SSH Key，</p>
+<p><img src="https://user-images.githubusercontent.com/66124531/121908621-c247ba80-cd5f-11eb-82fd-34e00bbb54dc.png" alt="7"></p>
+<p>将上面框里的以ssh-rsa开头的复制到Key框里，title可随便写。最后点击Add SSH Key。（可能会要你再输入一遍密码）</p>
+<p>将ssh key导入到github的过程结束，接下来是如何将ssh key导入到本地。</p>
+<h3 id="iii导入key到本地">III.导入key到本地</h3>
+<p>打开开始菜单，找到Pageant，打开后是不会有界面出来的，去托盘图标找到像<img src="https://user-images.githubusercontent.com/66124531/121910553-86155980-cd61-11eb-8b23-91698a980a3c.png" alt="8">的，选择View Keys，再选择Add Key导入你刚才导出的私钥（默认扩展名为ppk）。</p>
+<p>此时，你就可以试一试git功能是否能用了。</p>
+<h2 id="3注意事项">3.注意事项</h2>
+<ol>
+<li>
+<p>如果github里有很久不用的ssh key公钥时还是最好删掉，防止泄露。</p>
+</li>
+<li>
+<p>最近用过的ssh key，github是会以绿色显示的。</p>
+</li>
+<li>
+<p>不要犯傻把私钥一起丢到公开的git repo。</p>
+</li>
+</ol>
 
     </div>
 
@@ -181,16 +205,12 @@
   
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/gulut-blog/tags/sogou/">sogou</a>
+          <a href="/gulut-blog/tags/git/">git</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/gulut-blog/post1/2020/06/07/2020-06-07-w32tm-study-note/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Windows Time(w32tm)折腾笔记</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/gulut-blog/post1/2020/06/06/2020-06-06-python-pyotp-lib-test/">
-            <span class="next-text nav-default">Python pyotp调用实战</span>
+        
+        <a class="next" href="/gulut-blog/post1/2021/02/08/2021-02-08-pixiv-bypass-way-update/">
+            <span class="next-text nav-default">基于Nginx的反代使GitHub部分功能复活</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -203,8 +223,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-06-06 19:29:04 \u002b0800 CST',
-        title: '关于看不见本站图片以及Sogou图床防盗链解决方法',
+        id: '2021-06-14 14:44:45 \u002b0800 CST',
+        title: 'Tortoisegit新手向教程：使用SSH Key登录github',
         clientID: '5cc11be58eb331dd9d56',
         clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
         repo: 'gulut-blog',
