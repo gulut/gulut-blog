@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Mon, 08 Feb 2021 21:40:05 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Aug 2021 14:13:33 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/tags/internet/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在2021年使用Mypal浏览器在WinXP下的体验</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2021/08/21/2021-08-21-mypal-browser/</link>
+      <pubDate>Sat, 21 Aug 2021 14:13:33 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2021/08/21/2021-08-21-mypal-browser/</guid>
+      <description>前言 在2021年使用一个微软已放弃多年的系统Windows XP来浏览网页只剩下两种方案，其一是360系的浏览器（安全浏览器、极速浏览器）；其</description>
+    </item>
     
     <item>
       <title>基于Nginx的反代使GitHub部分功能复活</title>

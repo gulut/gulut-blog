@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Mon, 14 Jun 2021 14:44:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Aug 2021 14:13:33 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Personal Thought</title>
+      <link>https://gulut.github.io/gulut-blog/categories/personal-thought/</link>
+      <pubDate>Sat, 21 Aug 2021 14:13:33 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/categories/personal-thought/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Personal Notes</title>
@@ -18,15 +27,6 @@
       <pubDate>Mon, 14 Jun 2021 14:44:45 +0800</pubDate>
       
       <guid>https://gulut.github.io/gulut-blog/categories/personal-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Personal Thought</title>
-      <link>https://gulut.github.io/gulut-blog/categories/personal-thought/</link>
-      <pubDate>Sun, 13 Dec 2020 10:44:20 +0800</pubDate>
-      
-      <guid>https://gulut.github.io/gulut-blog/categories/personal-thought/</guid>
       <description></description>
     </item>
     

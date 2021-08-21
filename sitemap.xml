@@ -3,20 +3,55 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/categories/</loc>
-    <lastmod>2021-06-14T14:44:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/git/</loc>
-    <lastmod>2021-06-14T14:44:45+08:00</lastmod>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/</loc>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/internet/</loc>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/categories/personal-thought/</loc>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post/</loc>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post1/2021/08/21/2021-08-21-mypal-browser/</loc>
+    <lastmod>2021-08-21T14:13:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/tags/git/</loc>
     <lastmod>2021-06-14T14:44:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,29 +65,8 @@
   </url>
   
   <url>
-    <loc>https://gulut.github.io/gulut-blog/post/</loc>
-    <lastmod>2021-06-14T14:44:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/</loc>
-    <lastmod>2021-06-14T14:44:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gulut.github.io/gulut-blog/post1/2021/06/14/2021-06-14-tortoisegit-use/</loc>
     <lastmod>2021-06-14T14:44:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/tags/internet/</loc>
-    <lastmod>2021-02-11T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,13 +87,6 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/tags/hugo/</loc>
-    <lastmod>2020-12-20T00:23:21+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gulut.github.io/gulut-blog/categories/personal-thought/</loc>
     <lastmod>2020-12-20T00:23:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -304,7 +311,7 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/legal_information/</loc>
-    <lastmod>2021-02-06T00:00:00+08:00</lastmod>
+    <lastmod>2021-08-21T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -318,7 +325,7 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/legal_information/terms-of-privacy-zh-cn/</loc>
-    <lastmod>2021-02-06T00:00:00+08:00</lastmod>
+    <lastmod>2021-08-21T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
