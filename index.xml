@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sat, 21 Aug 2021 14:13:33 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Feb 2022 10:02:24 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PHP Composer包管理器入门教程</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2022/02/15/2022-02-15-php-composer-tutorial/</link>
+      <pubDate>Tue, 15 Feb 2022 10:02:24 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2022/02/15/2022-02-15-php-composer-tutorial/</guid>
+      <description>这是一篇新手向教程，也是自己记录PHP的Composer包管理器使用过程的文章，安装过程我未按照官方教程https://getcompose</description>
+    </item>
     
     <item>
       <title>在2021年使用Mypal浏览器在WinXP下的体验</title>
