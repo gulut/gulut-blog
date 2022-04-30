@@ -35,7 +35,7 @@
 
 
 <link href="/gulut-blog/dist/even.93844dae.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="PHP Composer包管理器入门教程" />
@@ -48,7 +48,7 @@
 <meta itemprop="description" content="这是一篇新手向教程，也是自己记录PHP的Composer包管理器使用过程的文章，安装过程我未按照官方教程https://getcompose">
 <meta itemprop="datePublished" content="2022-02-15T10:02:24&#43;08:00" />
 <meta itemprop="dateModified" content="2022-02-15T10:02:24&#43;08:00" />
-<meta itemprop="wordCount" content="1209">
+<meta itemprop="wordCount" content="1214">
 
 
 
@@ -61,8 +61,8 @@
 <![endif]-->
 
 <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://unpkg.com/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 </head>
 <body>
@@ -151,7 +151,7 @@
 <p>这是一篇新手向教程，也是自己记录PHP的Composer包管理器使用过程的文章，安装过程我未按照官方教程<a href="https://getcomposer.org/doc/00-intro.md#installation-windows">https://getcomposer.org/doc/00-intro.md#installation-windows</a>处理。</p>
 </blockquote>
 <blockquote>
-<p>p.s: 有无好用免登录图床推荐，sm.ms图床现在必须要登录，暂时使用imgbb图床</p>
+<p>p.s: 有无好用免登录图床推荐，sm.ms图床现在必须要登录，暂时使用<del>imgbb</del>imgtu图床</p>
 </blockquote>
 <h2 id="在开始之前">在开始之前</h2>
 <p>首先你需要有PHP环境，无论是通过PHPStudy还是在<a href="https://www.php.net/downloads.php">PHP官网</a>下载编译的，版本都要高于5.3.2，不过现在写的PHP应该版本都会高于这个的。</p>
@@ -168,7 +168,7 @@
 </div><p>即可，composer-setup.php是你installer下载下来之后重命名的，bin是composer的安装位置，filename就是文件名称了。</p>
 <p>如果是Windows系统的话，可以使用Composer的<a href="https://getcomposer.org/Composer-Setup.exe">Windows安装器</a>。</p>
 <p>但是，上面这些情况都是在想要下载最新稳定版的情况下使用的，如果你不想用最新版，而是想要使用LTS版怎么办？所以还有一种安装方法就是手动安装。打开下载页<a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a>,向下找到<strong>Manual Download</strong></p>
-<p><a href="https://ibb.co/g9jWcY5"><img src="https://i.ibb.co/B3z6YkX/s3.png" alt="s3"></a></p>
+<p><a href="https://ibb.co/g9jWcY5"><img src="https://s1.ax1x.com/2022/04/29/LxC1r4.png" alt="s3"></a></p>
 <p>根据图中的翻译，选择你需要的版本下载。我这边选择2.2.x LTS（长期支持版）下载。</p>
 <p>下载后可根据你的需要，将php的路径加入PATH环境变量，或者是写一个批处理在批处理里定义好PATH也行，这样可以不去动系统里的变量。</p>
 <div class="highlight"><div class="chroma">
@@ -237,8 +237,9 @@ cmd.exe /K
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://unpkg.com/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2022-02-15 10:02:24 \u002b0800 CST',
@@ -294,9 +295,9 @@ cmd.exe /K
     </div>
   </div>
   
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/gulut-blog/dist/even.ece58db6.min.js"></script>
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>adb常用命令 - Gulut&#39;s Blog</title>
+  <title>Even主题所用资源CDN迁移方法及实践 - Gulut&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Gulut" /><meta name="description" content="对应用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 对当前用户禁用 adb shell pm disable-user AppPackageName // 对本机禁用 adb shell pm disable AppPackageName // 启用应用 adb shell pm enable AppPackageName // 清除应用数据 adb shell pm clear AppPackageName // 卸载应用" /><meta name="keywords" content="adb, android" />
+<meta name="author" content="Gulut" /><meta name="description" content="前言 Jsdelivr在今天因DNS污染挂了一段时间，而几个月前也挂过，而且在Jsdelivr有国内ICP备案时就也会偶尔抽风，自从去年Jsd" /><meta name="keywords" content="CDN, Even, unpkg" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2020/07/12/2020-07-12-awesome-adb/" />
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2022/04/30/2022-04-29-move-to-unpkg/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
@@ -38,23 +38,23 @@
 <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="adb常用命令" />
-<meta property="og:description" content="对应用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 对当前用户禁用 adb shell pm disable-user AppPackageName // 对本机禁用 adb shell pm disable AppPackageName // 启用应用 adb shell pm enable AppPackageName // 清除应用数据 adb shell pm clear AppPackageName // 卸载应用" />
+<meta property="og:title" content="Even主题所用资源CDN迁移方法及实践" />
+<meta property="og:description" content="前言 Jsdelivr在今天因DNS污染挂了一段时间，而几个月前也挂过，而且在Jsdelivr有国内ICP备案时就也会偶尔抽风，自从去年Jsd" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2020/07/12/2020-07-12-awesome-adb/" />
-<meta property="article:published_time" content="2020-07-12T12:00:35+08:00" />
-<meta property="article:modified_time" content="2020-07-12T12:00:35+08:00" />
-<meta itemprop="name" content="adb常用命令">
-<meta itemprop="description" content="对应用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 对当前用户禁用 adb shell pm disable-user AppPackageName // 对本机禁用 adb shell pm disable AppPackageName // 启用应用 adb shell pm enable AppPackageName // 清除应用数据 adb shell pm clear AppPackageName // 卸载应用">
-<meta itemprop="datePublished" content="2020-07-12T12:00:35&#43;08:00" />
-<meta itemprop="dateModified" content="2020-07-12T12:00:35&#43;08:00" />
-<meta itemprop="wordCount" content="219">
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2022/04/30/2022-04-29-move-to-unpkg/" />
+<meta property="article:published_time" content="2022-04-30T00:00:00+08:00" />
+<meta property="article:modified_time" content="2022-04-30T00:00:00+08:00" />
+<meta itemprop="name" content="Even主题所用资源CDN迁移方法及实践">
+<meta itemprop="description" content="前言 Jsdelivr在今天因DNS污染挂了一段时间，而几个月前也挂过，而且在Jsdelivr有国内ICP备案时就也会偶尔抽风，自从去年Jsd">
+<meta itemprop="datePublished" content="2022-04-30T00:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2022-04-30T00:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="722">
 
 
 
-<meta itemprop="keywords" content="Android," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="adb常用命令"/>
-<meta name="twitter:description" content="对应用操作 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 对当前用户禁用 adb shell pm disable-user AppPackageName // 对本机禁用 adb shell pm disable AppPackageName // 启用应用 adb shell pm enable AppPackageName // 清除应用数据 adb shell pm clear AppPackageName // 卸载应用"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Even主题所用资源CDN迁移方法及实践"/>
+<meta name="twitter:description" content="前言 Jsdelivr在今天因DNS污染挂了一段时间，而几个月前也挂过，而且在Jsdelivr有国内ICP备案时就也会偶尔抽风，自从去年Jsd"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,10 +116,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">adb常用命令</h1>
+      <h1 class="post-title">Even主题所用资源CDN迁移方法及实践</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-07-12 </span>
+        <span class="post-time"> 2022-04-30 </span>
         <div class="post-category">
             <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
             </div>
@@ -132,51 +132,52 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#对应用操作">对应用操作</a></li>
-    <li><a href="#对文件操作">对文件操作</a></li>
-    <li><a href="#对设备操作">对设备操作</a></li>
-    <li><a href="#参考来源">参考来源</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#修改步骤">修改步骤</a>
+      <ul>
+        <li><a href="#1-修改configtoml">1. 修改config.toml</a></li>
+        <li><a href="#2-修改commentshtml">2. 修改comments.html</a></li>
+        <li><a href="#3-修改headhtml">3. 修改head.html</a></li>
+      </ul>
+    </li>
+    <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="对应用操作">对应用操作</h2>
+      <h2 id="前言">前言</h2>
+<p>Jsdelivr在今天因DNS污染挂了一段时间，而几个月前也挂过，而且在Jsdelivr有国内ICP备案时就也会偶尔抽风，自从去年Jsdelivr的ICP备案掉了后国内的访问请求就全部由Cloudflare和Fastly承担了。而Even主题用到的js、css大多只挂在npm上而不需要用到GitHub上的资源，想想看，还是决定把Even主题默认的Jsdelivr CDN换了，改成unpkg.com的CDN。本文就是介绍Even主题更换cdn时的坑。</p>
+<p>注：我使用的Even主题版本为4.0.0,新版可能修复了这些问题。</p>
+<h2 id="修改步骤">修改步骤</h2>
+<h3 id="1-修改configtoml">1. 修改config.toml</h3>
+<p>找到config.toml其中的params.publicCDN项，将所有的<code>cdn.jsdelivr.net/npm</code>替换为<code>unpkg.com</code>，不过替换完这一处只是部分js的cdn改变了。如果你有在使用Gitalk的话你就会发现怎么Gitalk还是从jsdelivr加载。因此我们还要进行第二步。</p>
+<h3 id="2-修改commentshtml">2. 修改comments.html</h3>
+<p>找到主题文件夹下的layouts\partials\comments.html文件，将有Gitalk注释下的代码由</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cmd" data-lang="cmd">// 对当前用户禁用
-adb shell pm disable-user AppPackageName
-// 对本机禁用
-adb shell pm disable AppPackageName
-// 启用应用
-adb shell pm enable AppPackageName
-// 清除应用数据
-adb shell pm clear AppPackageName
-// 卸载应用
-adb uninstall AppPackageName
-// 安装应用
-adb install AppPackageName
-// 强制停止应用
-adb shell am force-stop AppPackageName
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="对文件操作">对文件操作</h2>
+</div><p>替换成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://unpkg.com/gitalk@1/dist/gitalk.css&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://unpkg.com/gitalk@1/dist/gitalk.min.js&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>即可，本质上就还是将<code>cdn.jsdelivr.net/npm</code>这一套替换成<code>unpkg.com</code>。</p>
+<h3 id="3-修改headhtml">3. 修改head.html</h3>
+<p>在comments.html的同一个文件夹中能找到head.html，将此文件中的</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -185,37 +186,30 @@ adb shell am force-stop AppPackageName
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cmd" data-lang="cmd">// 取回文件
-adb pull 设备文件路径 本机存放路径
-// 推送文件
-adb push 设备文件路径 本机存放路径
+<pre class="chroma"><code class="language-html" data-lang="html">{{ `<span class="c">&lt;!--[if lt IE 9]&gt;
+</span><span class="c">  &lt;script src=&#34;https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js&#34;&gt;&lt;/script&gt;
+</span><span class="c">  &lt;script src=&#34;https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js&#34;&gt;&lt;/script&gt;
+</span><span class="c">&lt;![endif]--&gt;</span>` | safeHTML }}
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="对设备操作">对设备操作</h2>
+</div><p>替换为</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cmd" data-lang="cmd">// 获取Android版本
-adb shell getprop ro.build.version.release
-// 获取SDK版本
-adb shell getprop ro.build.version.sdk
-// 结束ADB调试并关闭
-adb shell settings put global adb_enabled 0
-// 截图
-adb exec-out screencap -p <span class="p">&gt;</span> 文件名.png
+<pre class="chroma"><code class="language-html" data-lang="html">{{ `<span class="c">&lt;!--[if lt IE 9]&gt;
+</span><span class="c">  &lt;script src=&#34;https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js&#34;&gt;&lt;/script&gt;
+</span><span class="c">  &lt;script src=&#34;https://unpkg.com/respond.js@1.4.2/dest/respond.min.js&#34;&gt;&lt;/script&gt;
+</span><span class="c">&lt;![endif]--&gt;</span>` | safeHTML }}
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="参考来源">参考来源</h2>
-<p><a href="https://github.com/mzlogin/awesome-adb">https://github.com/mzlogin/awesome-adb</a></p>
+</div><p>完成。</p>
+<h2 id="后记">后记</h2>
+<p>虽然现在jsdelivr重新从墙里放出来了，但不能保证后续jsdelivr不会再次被墙，目前来看最稳妥的方式还是换个cdn。</p>
 
     </div>
 
@@ -226,22 +220,16 @@ adb exec-out screencap -p <span class="p">&gt;</span> 文件名.png
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2020-07-12</span>
+    <span class="item-content">2022-04-30</span>
   </p>
   
   
 </div><footer class="post-footer">
-      <div class="post-tags">
-          <a href="/gulut-blog/tags/android/">Android</a>
-          </div>
+      
       <nav class="post-nav">
-        <a class="prev" href="/gulut-blog/post1/2020/07/26/2020-07-26-ping-general-failure-in-ipv6/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">记一次解决PING提示传输失败（General failure）的问题</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/gulut-blog/post1/2020/07/07/2020-07-07-aria2-config/">
-            <span class="next-text nav-default">Aria2配置文件个人备份</span>
+        
+        <a class="next" href="/gulut-blog/post1/2022/03/15/2022-03-15-caddy-with-php/">
+            <span class="next-text nav-default">折腾笔记：用Caddy服务器运行PHP</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -255,8 +243,8 @@ adb exec-out screencap -p <span class="p">&gt;</span> 文件名.png
     <script src="https://unpkg.com/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2020-07-12 12:00:35 \u002b0800 CST',
-        title: 'adb常用命令',
+        id: '2022-04-30 00:00:00 \u002b0800 CST',
+        title: 'Even主题所用资源CDN迁移方法及实践',
         clientID: '5cc11be58eb331dd9d56',
         clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
         repo: 'gulut-blog',

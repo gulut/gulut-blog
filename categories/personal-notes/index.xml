@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Tue, 15 Mar 2022 14:07:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/categories/personal-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Even主题所用资源CDN迁移方法及实践</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2022/04/30/2022-04-29-move-to-unpkg/</link>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2022/04/30/2022-04-29-move-to-unpkg/</guid>
+      <description>前言 Jsdelivr在今天因DNS污染挂了一段时间，而几个月前也挂过，而且在Jsdelivr有国内ICP备案时就也会偶尔抽风，自从去年Jsd</description>
+    </item>
     
     <item>
       <title>折腾笔记：用Caddy服务器运行PHP</title>
