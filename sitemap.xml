@@ -3,28 +3,35 @@
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/categories/</loc>
-    <lastmod>2023-06-27T14:01:00+08:00</lastmod>
+    <lastmod>2023-08-05T06:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gulut.github.io/gulut-blog/post1/2023/08/05/2023-08-05-docker-learning-note-1/</loc>
+    <lastmod>2023-08-05T06:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/</loc>
-    <lastmod>2023-06-27T14:01:00+08:00</lastmod>
+    <lastmod>2023-08-05T06:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/categories/personal-notes/</loc>
-    <lastmod>2023-06-27T14:01:00+08:00</lastmod>
+    <lastmod>2023-08-05T06:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://gulut.github.io/gulut-blog/post/</loc>
-    <lastmod>2023-06-27T14:01:00+08:00</lastmod>
+    <lastmod>2023-08-05T06:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

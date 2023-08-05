@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker学习笔记(1):CentOS 7上的Docker安装 - Gulut&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Gulut" /><meta name="description" content="注意：CentOS 7 的安全支持将于2024年6月30日结束，本文内容仅仅是为学习而继续使用CentOS 7，如果你是为了生产环境，或是为了未来" /><meta name="keywords" content="docker" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2023/08/05/2023-08-05-docker-learning-note-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
+<link rel="manifest" href="/gulut-blog/manifest.json">
+<link rel="mask-icon" href="/gulut-blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/gulut-blog/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Docker学习笔记(1):CentOS 7上的Docker安装" />
+<meta property="og:description" content="注意：CentOS 7 的安全支持将于2024年6月30日结束，本文内容仅仅是为学习而继续使用CentOS 7，如果你是为了生产环境，或是为了未来" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2023/08/05/2023-08-05-docker-learning-note-1/" />
+<meta property="article:published_time" content="2023-08-05T06:00:00+08:00" />
+<meta property="article:modified_time" content="2023-08-05T06:00:00+08:00" />
+<meta itemprop="name" content="Docker学习笔记(1):CentOS 7上的Docker安装">
+<meta itemprop="description" content="注意：CentOS 7 的安全支持将于2024年6月30日结束，本文内容仅仅是为学习而继续使用CentOS 7，如果你是为了生产环境，或是为了未来">
+<meta itemprop="datePublished" content="2023-08-05T06:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2023-08-05T06:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="1182">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker学习笔记(1):CentOS 7上的Docker安装"/>
+<meta name="twitter:description" content="注意：CentOS 7 的安全支持将于2024年6月30日结束，本文内容仅仅是为学习而继续使用CentOS 7，如果你是为了生产环境，或是为了未来"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://unpkg.com/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/gulut-blog/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/gulut-blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/gulut-blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/gulut-blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/gulut-blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/gulut-blog/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Docker学习笔记(1):CentOS 7上的Docker安装</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-08-05 </span>
+        <div class="post-category">
+            <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0干净的centos-7">0.干净的CentOS 7</a></li>
+    <li><a href="#1安装docker">1.安装Docker</a></li>
+    <li><a href="#2docker镜像配置">2.Docker镜像配置</a></li>
+    <li><a href="#3配置docker开机自启">3.配置Docker开机自启</a></li>
+    <li><a href="#感谢">感谢</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>注意：CentOS 7 的安全支持将于2024年6月30日结束，本文内容仅仅是为学习而继续使用CentOS 7，如果你是为了生产环境，或是为了未来的新系统部署Docker环境，则本文部分内容可能不再适用。具体请见 <a href="https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/">https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/</a></p>
+</blockquote>
+<h2 id="0干净的centos-7">0.干净的CentOS 7</h2>
+<p>在安装Docker前需要确认，环境中没有安装Docker。<del>因为已经安装了，就不用安装了。</del> 就像在<a href="https://docs.docker.com/engine/install/centos/">官方文档</a>中做的那样，先用yum卸载Docker相关的包。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum remove docker <span class="se">\
+</span><span class="se"></span>                  docker-client <span class="se">\
+</span><span class="se"></span>                  docker-client-latest <span class="se">\
+</span><span class="se"></span>                  docker-common <span class="se">\
+</span><span class="se"></span>                  docker-latest <span class="se">\
+</span><span class="se"></span>                  docker-latest-logrotate <span class="se">\
+</span><span class="se"></span>                  docker-logrotate <span class="se">\
+</span><span class="se"></span>                  docker-engine
+</code></pre></td></tr></table>
+</div>
+</div><p>如果你从前没安装过Docker通常会提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">参数 docker 没有匹配
+参数 docker-client 没有匹配
+参数 docker-client-latest 没有匹配
+参数 docker-common 没有匹配
+参数 docker-latest 没有匹配
+参数 docker-latest-logrotate 没有匹配
+参数 docker-logrotate 没有匹配
+参数 docker-engine 没有匹配
+</code></pre></td></tr></table>
+</div>
+</div><p>再用systemctl确认</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">  docker.socket                                                          loaded active listening Docker Socket for the API
+</code></pre></td></tr></table>
+</div>
+</div><p>这一行不存在了，就可以开始安装新版本的Docker了。</p>
+<p><strong>注意：卸载Docker，你原有的Docker配置不会自动删除，如有必要，可前往<code>/var/lib/docker/</code>删除配置</strong></p>
+<h2 id="1安装docker">1.安装Docker</h2>
+<p>在<a href="https://docs.docker.com/engine/install/centos/">官方文档</a>中Docker有多种安装方式，本次我们以从rpm安装为例。</p>
+<p>首先执行下面的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+</code></pre></td></tr></table>
+</div>
+</div><p>提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">adding repo from: https://download.docker.com/linux/centos/docker-ce.repo
+grabbing file https://download.docker.com/linux/centos/docker-ce.repo to /etc/yum.repos.d/docker-ce.repo
+repo saved to /etc/yum.repos.d/docker-ce.repo
+</code></pre></td></tr></table>
+</div>
+</div><p>即表明你正确的添加了Docker的源。</p>
+<p>执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</code></pre></td></tr></table>
+</div>
+</div><p>在提示<code>Is this ok [y/d/N]: </code>是选择y，接下来你可能会看到Docker的GPG密钥添加提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">从 https://download.docker.com/linux/centos/gpg 检索密钥
+导入 GPG key 0x621E9F35:
+ 用户ID     : &#34;Docker Release (CE rpm) &lt;docker@docker.com&gt;&#34;
+ 指纹       : 060a 61c5 1b55 8a7f 742b 77aa c52f eb6b 621e 9f35
+ 来自       : https://download.docker.com/linux/centos/gpg
+是否继续？[y/N]：y
+</code></pre></td></tr></table>
+</div>
+</div><p>通常情况下我们的Docker GPG指纹应该是一样的，如果不一样则有可能是中间人劫持，一样的话填y就行。</p>
+<p>安装完成后Docker不会自动运行，请使用<code>sudo systemctl start docker</code> 命令启动Docker。</p>
+<p>运行<code>sudo docker run hello-world</code> 查看终端是否输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &#34;hello-world&#34; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</code></pre></td></tr></table>
+</div>
+</div><p>至此Docker在CentOS 7上安装成功。</p>
+<h2 id="2docker镜像配置">2.Docker镜像配置</h2>
+<p>有时你可能会发现docker pull命令不好使，总是卡在一个百分比上。可以尝试在<code>/etc/docker/</code>下创建一个<code>daemon.json</code>文件。内容为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;registry-mirrors&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;https://hub-mirror.c.163.com&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;https://mirror.baidubce.com&#34;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后使用<code>sudo systemctl daemon-reload</code>重新加载daemon，<code>sudo systemctl restart docker</code>重启Docker，使用<code>sudo docker info</code>查看Docker状态。</p>
+<p>看到终端输出中有</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Registry Mirrors:
+  https://hub-mirror.c.163.com/
+  https://mirror.baidubce.com/
+</code></pre></td></tr></table>
+</div>
+</div><p>即表明Docker Mirror配置成功。</p>
+<h2 id="3配置docker开机自启">3.配置Docker开机自启</h2>
+<p>输入<code>sudo systemctl enable docker.service</code>即可，如希望Docker镜像也能够自启可以参照 <a href="https://blog.csdn.net/qq_37312838/article/details/115710209">https://blog.csdn.net/qq_37312838/article/details/115710209</a> 的方法解决。</p>
+<h2 id="感谢">感谢</h2>
+<p><a href="https://docker-practice.github.io/zh-cn/install/mirror.html">https://docker-practice.github.io/zh-cn/install/mirror.html</a> 提供的docker mirror地址</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Gulut</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2023-08-05</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/gulut-blog/post1/2023/06/21/2023-06-21-move-ua-to-ga4/">
+            <span class="next-text nav-default">网站统计功能从Universal Analytics 迁移到 Google Analytics 4</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://unpkg.com/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2023-08-05 06:00:00 \u002b0800 CST',
+        title: 'Docker学习笔记(1):CentOS 7上的Docker安装',
+        clientID: '5cc11be58eb331dd9d56',
+        clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
+        repo: 'gulut-blog',
+        owner: 'gulut',
+        admin: ['gulut'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/gulut" class="iconfont icon-github" title="github"></a>
+  <a href="https://gulut.github.io/gulut-blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2023
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    
+    
+    <span class="author"><a href="/gulut-blog/legal_information">Legal Information</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://unpkg.com/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/gulut-blog/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167947575-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFEZXVPYRT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZFEZXVPYRT');
+</script>
+
+
+
+
+
+
+</body>
+</html>

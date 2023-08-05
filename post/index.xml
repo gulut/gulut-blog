@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Wed, 21 Jun 2023 10:12:28 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Aug 2023 06:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker学习笔记(1):CentOS 7上的Docker安装</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2023/08/05/2023-08-05-docker-learning-note-1/</link>
+      <pubDate>Sat, 05 Aug 2023 06:00:00 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2023/08/05/2023-08-05-docker-learning-note-1/</guid>
+      <description>注意：CentOS 7 的安全支持将于2024年6月30日结束，本文内容仅仅是为学习而继续使用CentOS 7，如果你是为了生产环境，或是为了未来</description>
+    </item>
     
     <item>
       <title>网站统计功能从Universal Analytics 迁移到 Google Analytics 4</title>
