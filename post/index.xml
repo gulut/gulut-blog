@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Please read https://gulut.github.io/gulut-blog/legal_information</copyright>
-    <lastBuildDate>Sat, 07 Oct 2023 13:57:08 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 May 2024 13:01:00 +0800</lastBuildDate>
     
 	<atom:link href="https://gulut.github.io/gulut-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kubuntu 22.04.4 LTS 个人环境配置</title>
+      <link>https://gulut.github.io/gulut-blog/post1/2024/05/04/2024-05-02-kubuntu-use-note-1/</link>
+      <pubDate>Sat, 04 May 2024 13:01:00 +0800</pubDate>
+      
+      <guid>https://gulut.github.io/gulut-blog/post1/2024/05/04/2024-05-02-kubuntu-use-note-1/</guid>
+      <description>本文章为五一假期更新，算是我忙里偷闲草草写下的安装配置Kubuntu 22.04.4 LTS 的笔记吧（安装在VMware虚拟机中） 1.配置为24小时制显示 a.右</description>
+    </item>
     
     <item>
       <title>Slack Bot开发笔记(2):文件上传到频道</title>

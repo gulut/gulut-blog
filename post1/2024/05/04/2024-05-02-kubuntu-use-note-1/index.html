@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Kubuntu 22.04.4 LTS 个人环境配置 - Gulut&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Gulut" /><meta name="description" content="本文章为五一假期更新，算是我忙里偷闲草草写下的安装配置Kubuntu 22.04.4 LTS 的笔记吧（安装在VMware虚拟机中） 1.配置为24小时制显示 a.右" /><meta name="keywords" content="Kubuntu, ubuntu" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://gulut.github.io/gulut-blog/post1/2024/05/04/2024-05-02-kubuntu-use-note-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/gulut-blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/gulut-blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/gulut-blog/favicon-16x16.png">
+<link rel="manifest" href="/gulut-blog/manifest.json">
+<link rel="mask-icon" href="/gulut-blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/gulut-blog/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Kubuntu 22.04.4 LTS 个人环境配置" />
+<meta property="og:description" content="本文章为五一假期更新，算是我忙里偷闲草草写下的安装配置Kubuntu 22.04.4 LTS 的笔记吧（安装在VMware虚拟机中） 1.配置为24小时制显示 a.右" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gulut.github.io/gulut-blog/post1/2024/05/04/2024-05-02-kubuntu-use-note-1/" />
+<meta property="article:published_time" content="2024-05-04T13:01:00+08:00" />
+<meta property="article:modified_time" content="2024-05-04T13:01:00+08:00" />
+<meta itemprop="name" content="Kubuntu 22.04.4 LTS 个人环境配置">
+<meta itemprop="description" content="本文章为五一假期更新，算是我忙里偷闲草草写下的安装配置Kubuntu 22.04.4 LTS 的笔记吧（安装在VMware虚拟机中） 1.配置为24小时制显示 a.右">
+<meta itemprop="datePublished" content="2024-05-04T13:01:00&#43;08:00" />
+<meta itemprop="dateModified" content="2024-05-04T13:01:00&#43;08:00" />
+<meta itemprop="wordCount" content="1924">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kubuntu 22.04.4 LTS 个人环境配置"/>
+<meta name="twitter:description" content="本文章为五一假期更新，算是我忙里偷闲草草写下的安装配置Kubuntu 22.04.4 LTS 的笔记吧（安装在VMware虚拟机中） 1.配置为24小时制显示 a.右"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/gulut-blog/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/gulut-blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/gulut-blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/gulut-blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/gulut-blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/gulut-blog/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/gulut-blog/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Kubuntu 22.04.4 LTS 个人环境配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-05-04 </span>
+        <div class="post-category">
+            <a href="/gulut-blog/categories/personal-notes/"> Personal Notes </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1配置为24小时制显示">1.配置为24小时制显示</a>
+      <ul>
+        <li><a href="#a右下角数字时钟">a.右下角数字时钟</a></li>
+        <li><a href="#b锁屏界面时钟">b.锁屏界面时钟</a></li>
+        <li><a href="#c其他界面">c.其他界面</a></li>
+      </ul>
+    </li>
+    <li><a href="#2vmware-tools-安装">2.VMWare Tools 安装</a></li>
+    <li><a href="#3安装常用工具">3.安装常用工具</a>
+      <ul>
+        <li><a href="#agnu编译工具链gccgdb等安装">a.GNU编译工具链（gcc，gdb等）安装</a></li>
+        <li><a href="#b安装docker-engine">b.安装Docker Engine</a></li>
+      </ul>
+    </li>
+    <li><a href="#4后记">4.后记</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>本文章为五一假期更新，算是我忙里偷闲草草写下的安装配置Kubuntu 22.04.4 LTS 的笔记吧（安装在VMware虚拟机中）</p>
+</blockquote>
+<h2 id="1配置为24小时制显示">1.配置为24小时制显示</h2>
+<h3 id="a右下角数字时钟">a.右下角数字时钟</h3>
+<ol>
+<li>
+<p>右键右下角的数字时钟</p>
+<p><img src="https://s2.loli.net/2024/05/02/qlUPxgEtydcnef9.png" alt=".png"></p>
+</li>
+<li>
+<p>选择配置数字时钟</p>
+<p><img src="https://s2.loli.net/2024/05/02/XCxJHEn3AMvsjwU.png" alt=".png"></p>
+</li>
+<li>
+<p>时间显示改为24小时</p>
+<p><img src="https://s2.loli.net/2024/05/02/yr9RbXzKkETQjVA.png" alt=".png"></p>
+</li>
+</ol>
+<h3 id="b锁屏界面时钟">b.锁屏界面时钟</h3>
+<p><img src="https://s2.loli.net/2024/05/02/k1a4EhB3wKFGztU.png" alt=".png"></p>
+<p>参考 <a href="https://www.cnblogs.com/springsparrow9/p/14257425.html">https://www.cnblogs.com/springsparrow9/p/14257425.html</a> 操作如下：</p>
+<ol>
+<li>打开<code>/usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components/Clock.qml</code>
+<img src="https://s2.loli.net/2024/05/02/1SqhRiAt7Fe5VOd.png" alt=".png"></li>
+<li>修改代码
+<code>text：Qt.formatTime(timeSource.data [&quot;Local&quot;] [&quot;DateTime&quot;])</code>
+<img src="https://s2.loli.net/2024/05/02/fbonMN6Qyg3emLA.png" alt=".png">
+修改为
+<code>text：Qt.formatTime(timeSource.data [&quot;Local&quot;] [&quot;DateTime&quot;], &quot;hh:mm:ss&quot;)</code></li>
+</ol>
+<p>注： <code>hh:mm:ss</code>为Qt的时间格式化字符串，具体可见 <a href="https://doc.qt.io/qt-5/qml-qtqml-qt.html#formatDateTime-method">https://doc.qt.io/qt-5/qml-qtqml-qt.html#formatDateTime-method</a> 如果只需要显示到分填入<code>hh:mm</code>即可。</p>
+<h3 id="c其他界面">c.其他界面</h3>
+<p>根据 <a href="https://www.reddit.com/r/kde/comments/7hvzmt/whatt_the_best_way_to_add_custom_datetime_format/">https://www.reddit.com/r/kde/comments/7hvzmt/whatt_the_best_way_to_add_custom_datetime_format/</a></p>
+<p><a href="https://superuser.com/questions/1162283/use-iso-time-and-date-format-in-kde-5">https://superuser.com/questions/1162283/use-iso-time-and-date-format-in-kde-5</a></p>
+<p>等讨论结果，最方便的修改方式是单独更换时间的显示区域，就下面那个界面
+<img src="https://s2.loli.net/2024/05/02/vLE521nYGgIFwki.png" alt=""></p>
+<p>如果这界面里没有你想要的那种显示格式，我想可能要去改源码，自己编译了。</p>
+<h2 id="2vmware-tools-安装">2.VMWare Tools 安装</h2>
+<p>在默认情况下Kubuntu 装完后，你会发现整个系统卡卡的（虽然你搞完图形加速还是卡），可以尝试下更新<code>open-vm-tools</code>。</p>
+<p>参考：https://docs.vmware.com/cn/VMware-Tools/12.3.0/com.vmware.vsphere.vmwaretools.doc/GUID-C48E1F14-240D-4DD1-8D4C-25B6EBE4BB0F.html</p>
+<ol>
+<li>执行下面的命令</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get install open-vm-tools-desktop
+</code></pre></td></tr></table>
+</div>
+</div><p>即可。</p>
+<p>注：<code>sudo apt-get install open-vm-tools</code>这条命令只给那种没有图形界面的Debian系发行版执行和上面那条<code>open-vm-tools-desktop</code>的命令互斥（就是二选一的意思）。</p>
+<ol start="2">
+<li>打开驱动管理器，检查VMWare: SVGA II Adapter的驱动是否正常
+<img src="https://s2.loli.net/2024/05/02/UoykZN176bYgT4O.png" alt="">
+像上图这样就是正常的。</li>
+</ol>
+<p>注：如果这里还是提示this device not working 之类的话，一般就是没装好。VMware Tools的剪贴板共享功能要在装好之后<strong>重启一次</strong>才能正常使用，如果不行的话，请同时检查虚拟机设置中的客户机隔离是否启用了复制粘贴功能。如果你需要配置文件共享功能的话，可以使用搜索引擎查找他人的文章，但需要注意的是，不要像其他文章一样同时装上<code>open-vm-tools</code>和<code>open-vm-tools-desktop</code>两个包，没有任何必要。</p>
+<h2 id="3安装常用工具">3.安装常用工具</h2>
+<h3 id="agnu编译工具链gccgdb等安装">a.GNU编译工具链（gcc，gdb等）安装</h3>
+<ol>
+<li>在终端执行下面的代码即可</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt update # 下面那行不能用的时候执行下我
+sudo apt install build-essential
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>随后执行<code>gcc --version</code>能看到版本号就说明安装成功了
+<img src="https://s2.loli.net/2024/05/02/w7kosZbrxuFdnaV.png" alt=""></li>
+</ol>
+<h3 id="b安装docker-engine">b.安装Docker Engine</h3>
+<p>注： 这里有个需要注意的点Docker Desetop for Linux 和 Docker Engine <strong>不是</strong>一个东西。 从Docker的Linux安装文档 <a href="https://docs.docker.com/desktop/install/linux-install/">https://docs.docker.com/desktop/install/linux-install/</a> 和 Docker Desktop for Linux FAQ <a href="https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine">https://docs.docker.com/desktop/faqs/linuxfaqs/#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine</a> 就能看出来区别，简而言之，区别如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>不同点</th>
+<th>Docker Engine</th>
+<th>Docker Desktop for Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行方式</td>
+<td>和宿主机共享Linux Kernel</td>
+<td>实际上就是运行了一个VM（虚拟机），不与宿主机共享Kernel</td>
+</tr>
+<tr>
+<td>存储方式</td>
+<td>直接将镜像，容器等存储在<code>/var/lib/docker</code>下</td>
+<td>与虚拟机一致，只存储一个磁盘镜像</td>
+</tr>
+<tr>
+<td>文件共享方式</td>
+<td>依赖于Linux Kernel实现的namespace,CGroup功能</td>
+<td>使用VirtioFS</td>
+</tr>
+</tbody>
+</table>
+<p>所以，Docker Desktop for Linux 与其说是Docker不如说是个VM的前端罢了。并且Docker Desktop （据文档所述，未测试）是无法管理Docker Engine里的容器和镜像的。</p>
+<p>本次参考Docker Engine 的Ubuntu安装教程 <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a> 来安装。</p>
+<ol>
+<li>复制下面的内容保存为<code>pre-install-docker.sh</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Add Docker&#39;s official GPG key:</span>
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m <span class="m">0755</span> -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+<span class="c1"># Add the repository to Apt sources:</span>
+<span class="nb">echo</span> <span class="se">\
+</span><span class="se"></span>  <span class="s2">&#34;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+</span><span class="s2">  </span><span class="k">$(</span>. /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$VERSION_CODENAME</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2"> stable&#34;</span> <span class="p">|</span> <span class="se">\
+</span><span class="se"></span>  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+sudo apt-get update
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>使用<code>sh ./pre-install-docker.sh</code>执行脚本</p>
+</li>
+<li>
+<p>执行<code>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</code></p>
+</li>
+<li>
+<p>运行一下<code>sudo docker version</code>检查安装是否成功，一般安装正确的话会输出下面的内容</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">hicloud@hicloud-virtual-machine:~$ sudo docker version
+Client: Docker Engine - Community
+ Version:           26.1.1
+ API version:       1.45
+ Go version:        go1.21.9
+ Git commit:        4cf5afa
+ Built:             Tue Apr 30 11:47:53 2024
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          26.1.1
+  API version:      1.45 (minimum version 1.24)
+  Go version:       go1.21.9
+  Git commit:       ac2de55
+  Built:            Tue Apr 30 11:47:53 2024
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.31
+  GitCommit:        e377cd56a71523140ca6ae87e30244719194a521
+ runc:
+  Version:          1.1.12
+  GitCommit:        v1.1.12-0-g51d5e94
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>配置Docker Hub镜像</li>
+</ol>
+<p>以使用阿里云镜像加速器服务为例</p>
+<p>5-1. 搜索容器镜像服务 ACR 打开控制台，找到镜像加速器</p>
+<p><img src="https://s2.loli.net/2024/05/04/5K8iZjHN7edyB9W.png" alt="ali01.png"></p>
+<p>5-2. 打开<code>/etc/docker/daemon.json</code>文件（如没有请创建），填入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;registry-mirrors&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;你的加速器地址&#34;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>5-3. 重启Docker服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl daemon-reload
+sudo systemctl restart docker
+</code></pre></td></tr></table>
+</div>
+</div><p>5-4. 执行<code>sudo docker info</code>能看到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> Registry Mirrors:
+  https://你的加速器地址.mirror.aliyuncs.com/
+</code></pre></td></tr></table>
+</div>
+</div><p>就大功告成了。</p>
+<h2 id="4后记">4.后记</h2>
+<p>可能接下来过几个月后会更新下一篇吧（笑）</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Gulut</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2024-05-04</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/gulut-blog/post1/2023/10/07/2023-10-07-slack-bot-note-2/">
+            <span class="next-text nav-default">Slack Bot开发笔记(2):文件上传到频道</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js" integrity="sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2024-05-04 13:01:00 \u002b0800 CST',
+        title: 'Kubuntu 22.04.4 LTS 个人环境配置',
+        clientID: '5cc11be58eb331dd9d56',
+        clientSecret: '94486c55c3016f3230e475fbd2d9bd0d46dea495',
+        repo: 'gulut-blog',
+        owner: 'gulut',
+        admin: ['gulut'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/gulut" class="iconfont icon-github" title="github"></a>
+  <a href="https://gulut.github.io/gulut-blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2024
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    
+    
+    <span class="author"><a href="/gulut-blog/legal_information">Legal Information</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js" integrity="sha256-wzoq0P7w2qLzRcJsF319y6G9Oilk3nU5CZ8tnY9TjFI=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/gulut-blog/dist/even.ece58db6.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFEZXVPYRT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZFEZXVPYRT');
+</script>
+
+
+
+
+
+
+</body>
+</html>
